@@ -1,7 +1,8 @@
-package com.babynames.babynames
+package com.babynames.babynames.names.presentation
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.babynames.babynames.R
 
 class MainActivity : AppCompatActivity() {
 
