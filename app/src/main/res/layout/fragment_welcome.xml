@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".names.presentation.fragments.WelcomeFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_welcome"
+        android:layout_width="@dimen/welcome_fragment_animation_size"
+        android:layout_height="@dimen/welcome_fragment_animation_size"
+        android:layout_marginBottom="@dimen/welcome_fragment_animation_bottom_margins"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/text_welcome_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/welcome_fragment_message_header_bottom_margins"
+        android:fontFamily="@font/proxima_bold"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/welcome_fragment_message_header_size"
+        tools:text="@string/welcome_screen_message" />
+
+    <TextView
+        android:id="@+id/text_welcome_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/welcome_fragment_message_body_side_margins"
+        android:layout_marginStart="@dimen/welcome_fragment_message_body_side_margins"
+        android:fontFamily="@font/proxima_regular"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorGrayText"
+        android:textSize="@dimen/welcome_fragment_message_body_size"
+        tools:text="@string/welcome_screen_description" />
+
+</LinearLayout>

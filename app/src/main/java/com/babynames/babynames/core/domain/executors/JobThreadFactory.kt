@@ -6,6 +6,5 @@ class JobThreadFactory : ThreadFactory {
 
     private var counter: Int = 0
 
-    override fun newThread(r: Runnable?): Thread =
-            Thread(r, "android_ " + counter++)
+    override fun newThread(r: Runnable?): Thread = Thread(r, "android_" + counter++)
 }

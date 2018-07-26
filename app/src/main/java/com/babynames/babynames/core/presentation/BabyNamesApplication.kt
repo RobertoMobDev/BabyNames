@@ -11,7 +11,7 @@ class BabyNamesApplication : Application() {
 
     val applicationComponent: ApplicationComponent by lazy {
         DaggerApplicationComponent.builder()
-                .netModule(NetModule(""))
+                .netModule(NetModule("http://www.testing-reality.com"))
                 .applicationModule(ApplicationModule(this))
                 .build()
     }

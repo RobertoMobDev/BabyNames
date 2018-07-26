@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Welcome activity dimensions -->
+    <dimen name="welcome_swipe_text_side_margins">24dp</dimen>
+    <dimen name="welcome_swipe_text_bottom_margins">100dp</dimen>
+    <dimen name="welcome_swipe_text_size">20sp</dimen>
+    <dimen name="welcome_pager_height">35dp</dimen>
+    <dimen name="welcome_pager_bottom_margins">60dp</dimen>
+    <dimen name="welcome_button_height">40dp</dimen>
+    <dimen name="welcome_button_side_margins">16dp</dimen>
+    <dimen name="welcome_button_bottom_margins">16dp</dimen>
+
+    <!-- Welcome fragment dimensions -->
+    <dimen name="welcome_fragment_animation_size">180dp</dimen>
+    <dimen name="welcome_fragment_animation_bottom_margins">40dp</dimen>
+    <dimen name="welcome_fragment_message_header_bottom_margins">10dp</dimen>
+    <dimen name="welcome_fragment_message_header_size">24sp</dimen>
+    <dimen name="welcome_fragment_message_body_side_margins">16dp</dimen>
+    <dimen name="welcome_fragment_message_body_size">20sp</dimen>
+
+    <!-- Couple fragment dimensions -->
+    <dimen name="couple_fragment_animation_size">180dp</dimen>
+    <dimen name="couple_fragment_animation_bottom_margins">40dp</dimen>
+    <dimen name="couple_fragment_message_header_bottom_margins">10dp</dimen>
+    <dimen name="couple_fragment_message_header_size">24sp</dimen>
+    <dimen name="couple_fragment_message_body_side_margins">16dp</dimen>
+    <dimen name="couple_fragment_message_body_size">20sp</dimen>
+
+    <!-- Choose fragment dimensions -->
+    <dimen name="choose_fragment_animation_size">180dp</dimen>
+    <dimen name="choose_fragment_animation_bottom_margins">40dp</dimen>
+    <dimen name="choose_fragment_message_header_bottom_margins">10dp</dimen>
+    <dimen name="choose_fragment_message_header_size">24sp</dimen>
+    <dimen name="choose_fragment_message_body_side_margins">16dp</dimen>
+    <dimen name="choose_fragment_message_body_size">20sp</dimen>
+
+    <!-- Finish fragment dimensions -->
+    <dimen name="finish_fragment_animation_size">180dp</dimen>
+    <dimen name="finish_fragment_animation_bottom_margins">40dp</dimen>
+    <dimen name="finish_fragment_message_header_bottom_margins">10dp</dimen>
+    <dimen name="finish_fragment_message_header_size">24sp</dimen>
+    <dimen name="finish_fragment_message_body_side_margins">16dp</dimen>
+    <dimen name="finish_fragment_message_body_size">20sp</dimen>
+
+    <!-- Gender activity dimensions -->
+    <dimen name="gender_header_general_margins">4dp</dimen>
+    <dimen name="gender_options_text_size">20sp</dimen>
+
+    <!-- Names fragment dimensions -->
+    <dimen name="names_fragment_animation_size">180dp</dimen>
+    <dimen name="names_fragment_animation_bottom_margins">40dp</dimen>
+    <dimen name="names_message_header_bottom_margins">20dp</dimen>
+    <dimen name="names_message_header_side_margins">30dp</dimen>
+    <dimen name="names_message_header_size">20sp</dimen>
+    <dimen name="names_message_side_margins">20dp</dimen>
+    <dimen name="names_message_size">16sp</dimen>
+    <dimen name="names_swipe_view_side_margins">20dp</dimen>
+    <dimen name="names_circular_progress_size">50dp</dimen>
+
+    <!-- Matches fragment dimensions -->
+    <dimen name="matches_fragment_animation_size">160dp</dimen>
+    <dimen name="matches_fragment_animation_top_margins">20dp</dimen>
+    <dimen name="matches_fragment_message_header_side_margins">16dp</dimen>
+    <dimen name="matches_fragment_message_header_size">20sp</dimen>
+    <dimen name="matches_fragment_message_top_margin">20dp</dimen>
+    <dimen name="matches_fragment_message_bottom_margin">40dp</dimen>
+    <dimen name="matches_fragment_message_size">16sp</dimen>
+    <dimen name="matches_fragment_button_side_padding">5dp</dimen>
+    <dimen name="matches_fragment_button_size">20sp</dimen>
+
+    <!-- Favorites fragment dimensions -->
+    <dimen name="favorites_fragment_recycler_general_margins">5dp</dimen>
+    <dimen name="favorites_fragment_animation_size">200dp</dimen>
+    <dimen name="favorites_fragment_animation_bottom_margins">40dp</dimen>
+    <dimen name="favorites_fragment_message_header_bottom_margins">20dp</dimen>
+    <dimen name="favorites_fragment_message_header_size">20sp</dimen>
+    <dimen name="favorites_fragment_message_side_margins">10dp</dimen>
+    <dimen name="favorites_fragment_message_size">16sp</dimen>
+    <dimen name="favorites_circular_progress_size">50dp</dimen>
+
+    <!-- Profile fragment dimensions -->
+    <dimen name="profile_fragment_section_profile_height">100dp</dimen>
+    <dimen name="profile_fragment_user_pic_size">60dp</dimen>
+    <dimen name="profile_fragment_user_pic_start_margins">16dp</dimen>
+    <dimen name="profile_fragment_user_pic_end_margins">20dp</dimen>
+    <dimen name="profile_fragment_user_name_size">16sp</dimen>
+    <dimen name="profile_fragment_user_name_bottom_margins">10dp</dimen>
+    <dimen name="profile_fragment_logout_size">14sp</dimen>
+    <dimen name="profile_fragment_add_couple_side_margins">16dp</dimen>
+    <dimen name="profile_fragment_add_couple_size">16sp</dimen>
+    <dimen name="profile_fragment_couple_name_start_margins">16dp</dimen>
+    <dimen name="profile_fragment_couple_name_end_margins">20dp</dimen>
+    <dimen name="profile_fragment_couple_name_bottom_margins">10dp</dimen>
+    <dimen name="profile_fragment_couple_name_size">16sp</dimen>
+    <dimen name="profile_fragment_manage_text_start_margins">76dp</dimen>
+    <dimen name="profile_fragment_manage_text_end_margins">20dp</dimen>
+    <dimen name="profile_fragment_manage_text_size">14sp</dimen>
+    <dimen name="profile_fragment_general_section_height">60dp</dimen>
+    <dimen name="profile_fragment_icon_size">24dp</dimen>
+    <dimen name="profile_fragment_icon_start_margins">16dp</dimen>
+    <dimen name="profile_fragment_icon_end_margins">20dp</dimen>
+    <dimen name="profile_fragment_general_section_text_size">16sp</dimen>
+
+    <!-- Favorite name layout dimensions -->
+    <dimen name="favorite_name_card_radius">7dp</dimen>
+    <dimen name="favorite_name_card_shadow">4dp</dimen>
+    <dimen name="favorite_name_card_text_name_general_margins">10dp</dimen>
+    <dimen name="favorite_name_card_text_name_size">28sp</dimen>
+    <dimen name="favorite_name_card_menu_icon_size">20dp</dimen>
+    <dimen name="favorite_name_card_menu_icon_side_margins">10dp</dimen>
+    <dimen name="favorite_name_card_meaning_header_margins">10dp</dimen>
+    <dimen name="favorite_name_card_meaning_header_size">24sp</dimen>
+    <dimen name="favorite_name_card_meaning_top_margin">20dp</dimen>
+    <dimen name="favorite_name_card_meaning_margins">10dp</dimen>
+    <dimen name="favorite_name_card_meaning_size">20sp</dimen>
+    <dimen name="favorite_name_card_icon_height">50dp</dimen>
+    <dimen name="favorite_name_card_icon_bottom_margin">10dp</dimen>
+
+    <!-- About fragment dimensions -->
+    <dimen name="about_fragment_general_padding">10dp</dimen>
+    <dimen name="about_fragment_animation_size">100dp</dimen>
+    <dimen name="about_fragment_ios_text_bottom_margin">10dp</dimen>
+    <dimen name="about_fragment_ios_text_size">16sp</dimen>
+    <dimen name="about_fragment_ios_text_name_size">14sp</dimen>
+
+    <!-- MyQR fragment dimensions -->
+    <dimen name="my_qr_fragment_message_top_margins">20dp</dimen>
+    <dimen name="my_qr_fragment_message_side_margins">16dp</dimen>
+    <dimen name="my_qr_fragment_message_size">16sp</dimen>
+    <dimen name="my_qr_fragment_image_top_margins">20dp</dimen>
+
+    <!-- Scan fragment dimensions -->
+    <dimen name="scan_fragment_animation_size">180dp</dimen>
+    <dimen name="scan_fragment_animation_top_margins">20dp</dimen>
+    <dimen name="scan_fragment_message_side_margins">16dp</dimen>
+    <dimen name="scan_fragment_message_size">16sp</dimen>
+    <dimen name="scan_fragment_button_top_margins">20dp</dimen>
+
+    <!-- Name layout dimensions -->
+    <dimen name="name_layout_card_width_size">300dp</dimen>
+    <dimen name="name_layout_card_height_size">350dp</dimen>
+    <dimen name="name_layout_card_top_margin">10dp</dimen>
+    <dimen name="name_layout_card_bottom_margin">50dp</dimen>
+    <dimen name="name_layout_card_name_header_top_padding">20dp</dimen>
+    <dimen name="name_layout_card_name_side_margins">20dp</dimen>
+    <dimen name="name_layout_card_name_size">24sp</dimen>
+    <dimen name="name_layout_card_name_content_general_padding">20dp</dimen>
+    <dimen name="name_layout_card_name_content_bottom_margin">20dp</dimen>
+    <dimen name="name_layout_card_name_meaning_header_bottom_margin">10dp</dimen>
+    <dimen name="name_layout_card_name_meaning_header_size">24sp</dimen>
+    <dimen name="name_layout_card_name_meaning_bottom_margin">20dp</dimen>
+    <dimen name="name_layout_card_name_meaning_size">20sp</dimen>
+    <dimen name="name_layout_card_name_origin_header_bottom_margin">10dp</dimen>
+    <dimen name="name_layout_card_name_origin_header_size">24sp</dimen>
+    <dimen name="name_layout_card_name_origin_size">20sp</dimen>
+</resources>

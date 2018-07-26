@@ -1,3 +1,109 @@
 <resources>
     <string name="app_name">BabyNames</string>
+    <!--Welcome Screen Strings-->
+    <string name="welcome_screen_message">Bienvenido a Baby Names</string>
+    <string name="welcome_screen_description">El mejor catálogo con los nombres perfectos para bebé hecho App.</string>
+    <string name="welcome_screen_instruction">Desliza para continuar</string>
+    <string name="decision_screen_message">Una decisión en pareja</string>
+    <string name="decision_screen_description">Conecta a tú pareja y juntos hagan la elección ideal.</string>
+    <string name="choose_screen_message">Elige el nombre perfecto</string>
+    <string name="choose_screen_description">Guarda tus favoritos fácilmente y selecciona el nombre perfecto.</string>
+    <string name="finish_screen_message">Muestra tus elegidos</string>
+    <string name="finish_screen_description">Observa y comparte las coincidencias con tú pareja.</string>
+    <string name="facebook_button_login_text">Acceder con Facebook</string>
+    <string name="welcome_screen_login_cancelled">Login Cancelado</string>
+
+    <!--Gender Screen Strings-->
+    <string name="gender_select_text">Selecciona el genero de tú bebé</string>
+    <string name="gender_select_boy">Niño</string>
+    <string name="gender_select_girl">Niña</string>
+    <string name="gender_select_surprise">Sorpresa</string>
+
+    <!-- Matches Screen Strings-->
+    <string name="matches_main_message">Todo es mejor en pareja</string>
+    <string name="matches_secondary_message">Parece que no has seleccionado a tu pareja, no te preocupes, lo resolvemos en un segundo</string>
+    <string name="matches_button_text">Vamos</string>
+    <string name="matches_empty_list_header">¡Ops… esta muy vacio aquí!</string>
+    <string name="matches_empty_list_message">Aún no has tienes coincidencias, guarda un nombre como favorito y mirenlos aquí.</string>
+
+    <!-- Profile Screen Strings-->
+    <string name="profile_logout_text">Cerrar sesión</string>
+    <string name="profile_partner_text">Agrega a tu pareja</string>
+    <string name="profile_gender_text">Cambiar el genero de tú bebé</string>
+    <string name="profile_about_text">Quienes somos</string>
+    <string name="profile_share_text">Comparte la app</string>
+    <string name="profile_rate_text">Calificanos</string>
+    <string name="profile_feedback_text">Ayudanos a mejorar</string>
+    <string name="profile_ads_text">Quitar publicidad</string>
+    <string name="profile_dialog_first_option">Escanea el QR de tu pareja</string>
+    <string name="profile_dialog_second_option">Mostrar mi código QR</string>
+    <string name="profile_dialog_title">Selecciona a tu pareja. Esta app funciona mejor en equipo</string>
+    <string name="profile_logout_dialog_title">¿Es momento de decir adiós?</string>
+    <string name="profile_logout_dialog_message">No te preocupes, guardamos los nombres para la proxima vez</string>
+    <string name="profile_logout_dialog_negative_button_text">Cancelar</string>
+    <string name="profile_logout_dialog_positive_button_text">Cerrar sesión</string>
+    <string name="profile_feedback_email_subject">Comentarios Baby Names Android App</string>
+    <string name="profile_feedback_chooser_header">Envianos un Email</string>
+    <string name="profile_feedback_failed_share_message">Por favor instala un cliente de email para enviarnos tus comentarios</string>
+
+    <!-- Favorites Screen Strings-->
+    <string name="favorite_meaning_header_text">Significado</string>
+    <string name="favorite_empty_list_header">¡Ops… esta muy vacio aquí!</string>
+    <string name="favorite_empty_list_message">Aún no has agregado favoritos, agrega el primero y miralos aquí.</string>
+    <string name="favorite_dialog_title">¿Qué deseas hacer?</string>
+    <string name="favorite_dialog_first_option">Eliminar nombre de favoritos</string>
+    <string name="favorite_dialog_negative">CANCELAR</string>
+
+    <!-- Names Screen Strings-->
+    <string name="names_meaning_header_text">Significado:</string>
+    <string name="names_origin_header_text">Origen:</string>
+    <string name="names_empty_list_header">Oh oh.. parece que se terminaron…</string>
+    <string name="names_empty_list_message">No te preocupes, toca el icono de actualizar y te mostraremos los nombres que aun no están en tu lista de favoritos.</string>
+
+    <!--Bottom Bar Strings-->
+    <string name="bottom_bar_names_text">Nombres de Bebé</string>
+    <string name="bottom_bar_matches_text">Coincidencias</string>
+    <string name="bottom_bar_favorites_text">Favoritos</string>
+    <string name="bottom_bar_profile_text">Perfil</string>
+
+    <!-- About Screen Strings-->
+    <string name="about_ios_developer_text">ios Developer</string>
+    <string name="about_ios_developer_name">Carlos Rodriguez</string>
+    <string name="about_web_developer_text">web Developer</string>
+    <string name="about_web_developer_name">Manuel Ivan Herrera Maciel</string>
+    <string name="about_android_developer_text">android Developer</string>
+    <string name="about_android_developer_name">Roberto Carlos Cervantes</string>
+
+    <!-- QR Screen Strings-->
+    <string name="qr_main_message">Comparte tu código QR y comienza a elegir el
+        nombre perfecto en pareja. Debajo está tú código QR personal</string>
+    <string name="qr_button_text">Compartir</string>
+    <string name="qr_share_text">Comparte el código QR</string>
+    <string name="qr_permission_no_granted_message">Este permiso es necesario para compartir tú código QR</string>
+    <string name="qr_permission_no_granted_button_text">OK</string>
+
+    <!-- Scan Screen Strings-->
+    <string name="scan_main_message">Coloca el código QR frente a la cámara para que pueda ser escaneado como se muestra en la animación</string>
+    <string name="scan_permission_no_granted_message">Este permiso es necesario para escanear el código QR de tu pareja</string>
+    <string name="scan_permission_no_granted_button_text">OK</string>
+    <string name="scan_button_text">OK</string>
+
+    <!-- Fragments Title Strings-->
+    <string name="fragment_names_title">Nombres de Bebé</string>
+    <string name="fragment_matches_title">Coincidencias</string>
+    <string name="fragment_favorites_title">Favoritos</string>
+    <string name="fragment_profile_title">Perfil</string>
+    <string name="fragment_about_title">Quienes somos</string>
+    <string name="fragment_qr_title">Tú Código QR</string>
+    <string name="fragment_scan_title">Escanear QR</string>
+    <string name="profile_manage_partner_text">Configuración de tú pareja</string>
+
+    <!--Facebook-->
+    <string name="facebook_app_id">844810118912803</string>
+    <string name="fb_login_protocol_scheme">fb844810118912803</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
