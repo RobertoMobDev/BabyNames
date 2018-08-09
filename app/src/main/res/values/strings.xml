@@ -1,15 +1,6 @@
 <resources>
     <string name="app_name">BabyNames</string>
     <!--Welcome Screen Strings-->
-    <string name="welcome_screen_message">Bienvenido a Baby Names</string>
-    <string name="welcome_screen_description">El mejor catálogo con los nombres perfectos para bebé hecho App.</string>
-    <string name="welcome_screen_instruction">Desliza para continuar</string>
-    <string name="decision_screen_message">Una decisión en pareja</string>
-    <string name="decision_screen_description">Conecta a tú pareja y juntos hagan la elección ideal.</string>
-    <string name="choose_screen_message">Elige el nombre perfecto</string>
-    <string name="choose_screen_description">Guarda tus favoritos fácilmente y selecciona el nombre perfecto.</string>
-    <string name="finish_screen_message">Muestra tus elegidos</string>
-    <string name="finish_screen_description">Observa y comparte las coincidencias con tú pareja.</string>
     <string name="facebook_button_login_text">Acceder con Facebook</string>
     <string name="welcome_screen_login_cancelled">Login Cancelado</string>
 

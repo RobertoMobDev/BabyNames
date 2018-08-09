@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Core</string>
+    <string name="splash_text_msg_permision">Necesitas activar manualmente los permisos para acceder a la aplicación</string>
+    <string name="required_permissions_message">Esta app necesita acceder y crear cuentas en su dispositivo para su correcto funcionamiento.</string>
+</resources>

@@ -1,0 +1,95 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api project(":database")
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'com.android.support:appcompat-v7:27.1.1'
+
+    api 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    //Design Library
+    api 'com.android.support:design:27.1.1'
+
+    //CardView
+    api 'com.android.support:cardview-v7:27.1.1'
+
+    //Lottie
+    api 'com.airbnb.android:lottie:2.5.1'
+
+    //Glide
+    api 'com.github.bumptech.glide:glide:4.6.1'
+    api 'com.android.support:support-v4:27.1.1'
+    kapt 'com.github.bumptech.glide:compiler:4.6.1'
+
+    //Picasso
+    api 'com.squareup.picasso:picasso:2.71828'
+
+    //PlaceHolder View
+    api 'com.mindorks:placeholderview:0.7.2'
+
+    //RxJava & RxAndroid Libraries
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'io.reactivex.rxjava2:rxjava:2.1.12'
+
+    //Retrofit Library
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    api 'com.squareup.retrofit2:converter-scalars:2.1.0'
+
+    //Anko
+    api "org.jetbrains.anko:anko-commons:$anko_version"
+    api "org.jetbrains.anko:anko:$anko_version"
+    api "org.jetbrains.anko:anko-design:$anko_version"
+
+    //Barcode Scanner
+    api 'me.dm7.barcodescanner:zxing:1.9'
+
+    //QRGen
+    api 'com.github.kenglxn.QRGen:android:2.4.0'
+
+    //Circular Progress Bar
+    api 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
+
+    //Dagger
+    api 'com.google.dagger:dagger:2.15'
+
+    //Room
+    kapt 'android.arch.persistence.room:compiler:1.1.1'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
