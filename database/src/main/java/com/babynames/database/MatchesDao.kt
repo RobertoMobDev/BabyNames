@@ -12,7 +12,7 @@ interface MatchesDao {
     fun insertMatch(match: List<MatchEntity>)
 
     @Query("DELETE FROM matches WHERE id = :id")
-    fun deleteMatch(id: String)
+    fun delete(id: Int)
 
     @Query("SELECT * FROM matches ORDER BY id")
     fun getMatches(): Flowable<List<MatchEntity>>

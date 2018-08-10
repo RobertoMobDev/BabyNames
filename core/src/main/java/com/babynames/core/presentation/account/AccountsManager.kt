@@ -7,6 +7,7 @@ object AccountsManager {
     const val REQUEST_PERMISSIONS_CODE: Int = 1024
     const val REQUEST_CODE_FOR_REMOVE_ACCOUNT: Int = 1001
     const val RESULT_CODE_ACCOUNT_CREATED: Int = 1034
+    const val REQUEST_CODE_SIGN_IN: Int = 1044
 
     /**
      * Metodo que itera sobre las diferentes cuentas para verificar si existe

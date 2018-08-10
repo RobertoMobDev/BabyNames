@@ -8,8 +8,9 @@ import com.babynames.core.domain.useCases.UseCase
 import com.babynames.login.domain.entities.requestObjects.CreateLocalAccountRequestObject
 import com.babynames.login.domain.exceptions.CreateLocalAccountException
 import io.reactivex.Observable
+import javax.inject.Inject
 
-class CreateLocalAccountUseCase(threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread) : UseCase<Bundle, CreateLocalAccountRequestObject>(threadExecutor, postExecutionThread) {
+class CreateLocalAccountUseCase @Inject constructor(threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread) : UseCase<Bundle, CreateLocalAccountRequestObject>(threadExecutor, postExecutionThread) {
 
     override fun createObservable(params: CreateLocalAccountRequestObject): Observable<Bundle> =
             if (params.accountType.isBlank()) {

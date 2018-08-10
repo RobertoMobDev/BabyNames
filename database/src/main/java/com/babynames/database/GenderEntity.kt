@@ -8,5 +8,5 @@ import android.arch.persistence.room.PrimaryKey
 data class GenderEntity(@ColumnInfo(name = "gender") val genderSelected: String) {
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id")
-    val genderId: Int? = null
+    var genderId: Int? = null
 }

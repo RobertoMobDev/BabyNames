@@ -1,10 +1,11 @@
 package com.babynames.login.presentation.viewModels
 
 import android.os.Bundle
-import com.babynames.core.presentation.viewModels.BaseView
 import com.babynames.core.domain.entities.UserProfile
+import com.babynames.core.presentation.viewModels.BaseView
 import com.babynames.login.domain.entities.requestObjects.SignInRequestObject
 import com.facebook.FacebookCallback
+import com.facebook.GraphRequest
 import com.facebook.login.LoginResult
 
 interface SignInViewModel : BaseView, FacebookCallback<LoginResult> {

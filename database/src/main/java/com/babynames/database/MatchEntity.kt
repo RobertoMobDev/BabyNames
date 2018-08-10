@@ -6,7 +6,7 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "matches")
 data class MatchEntity(@ColumnInfo(name = "match") val matchName: String) {
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: String? = null
+    var id: Int? = null
 }

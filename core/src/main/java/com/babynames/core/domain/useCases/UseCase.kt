@@ -7,11 +7,11 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
 
-abstract class UseCase<T, Params>(private val threadExecutor: ThreadExecutor, private val postExecutionThread: PostExecutionThread) : Interactor<T, Params> {
+abstract class UseCase<T, Params>(val threadExecutor: ThreadExecutor, val postExecutionThread: PostExecutionThread) : Interactor<T, Params> {
 
     abstract fun createObservable(params: Params): Observable<T>
 
-    private val disposables: CompositeDisposable by lazy { CompositeDisposable() }
+    val disposables: CompositeDisposable by lazy { CompositeDisposable() }
 
     override fun execute(observer: DisposableObserver<T>, params: Params) {
         val observable: Observable<T> = this.createObservable(params)
@@ -27,5 +27,4 @@ abstract class UseCase<T, Params>(private val threadExecutor: ThreadExecutor, pr
             this.disposables.dispose()
         }
     }
-
 }

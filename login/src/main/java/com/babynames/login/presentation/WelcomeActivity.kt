@@ -20,15 +20,19 @@ import com.babynames.login.R
 import com.babynames.login.domain.entities.requestObjects.CreateLocalAccountRequestObject
 import com.babynames.login.domain.entities.requestObjects.SignInRequestObject
 import com.babynames.login.presentation.adapters.WelcomePagerAdapter
+import com.babynames.login.presentation.components.DaggerSignInComponent
 import com.babynames.login.presentation.components.SignInComponent
 import com.babynames.login.presentation.fragments.WelcomeFragment
 import com.babynames.login.presentation.modules.SignInModule
 import com.babynames.login.presentation.presenters.abstractions.SignInPresenter
 import com.babynames.login.presentation.viewModels.SignInViewModel
+import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookException
+import com.facebook.GraphRequest
 import com.facebook.login.LoginResult
 import kotlinx.android.synthetic.main.activity_welcome.*
+import org.jetbrains.anko.accountManager
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.cancelButton
 import org.jetbrains.anko.okButton
@@ -49,9 +53,16 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
         CallbackManager.Factory.create()
     }
 
-    private val accountManager by lazy {
-        AccountManager.get(this)
-    }
+    private val facebookGraphRequest: GraphRequest
+        get() {
+            val graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken()) { _, _ ->
+            }
+
+            val parameters = Bundle()
+            parameters.putString("fields", "id, name, email, age_range, birthday, gender, picture.height(300).width(300)")
+            graphRequest.parameters = parameters
+            return graphRequest
+        }
 
     @Inject
     lateinit var signInPresenter: SignInPresenter
@@ -66,8 +77,19 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
+        this.signInComponent.inject(this)
         initViews()
         initDotsView()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        this.signInPresenter.bind(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        this.signInPresenter.onDestroy()
     }
 
 
@@ -75,9 +97,7 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == AccountsManager.REQUEST_PERMISSIONS_CODE) {
             if (PermissionsManager.verifyPermissions(grantResults)) {
-                val parameters = Bundle()
-                parameters.putString("fields", "id, name, email, age_range, birthday, gender, picture.height(300).width(300)")
-                this.signInPresenter.getFacebookInfo(parameters)
+                this.signInPresenter.getFacebookInfo(this.facebookGraphRequest)
             }
         }
     }
@@ -125,9 +145,7 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
     }
 
     override fun checkPermissionsSuccess(boolean: Boolean) {
-        val parameters = Bundle()
-        parameters.putString("fields", "id, name, email, age_range, birthday, gender, picture.height(300).width(300)")
-        this.signInPresenter.getFacebookInfo(parameters)
+        this.signInPresenter.getFacebookInfo(this.facebookGraphRequest)
     }
 
     override fun requestAccountPermissionRationale(requestCode: Int) {
@@ -209,9 +227,7 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
     }
 
     override fun onSuccess(result: LoginResult?) {
-        val parameters = Bundle()
-        parameters.putString("fields", "id, name, email, age_range, birthday, gender, picture.height(300).width(300)")
-        this.signInPresenter.getFacebookInfo(parameters)
+        this.signInPresenter.getFacebookInfo(this.facebookGraphRequest)
     }
 
     override fun onCancel() {

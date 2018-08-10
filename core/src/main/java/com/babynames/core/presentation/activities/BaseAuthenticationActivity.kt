@@ -114,7 +114,7 @@ abstract class BaseAuthenticationActivity : BaseActivity(), OnAccountsUpdateList
     }
 
     private fun addAccountUpdateListener(activity: Activity, requestCode: Int) {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED || Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
             AccountManager.get(this).addOnAccountsUpdatedListener(this, null, true)
             this.isAccountListenerSet = true
         } else {
@@ -123,7 +123,7 @@ abstract class BaseAuthenticationActivity : BaseActivity(), OnAccountsUpdateList
     }
 
     private fun requestAccountPermissions(activity: Activity, requestCode: Int) {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.GET_ACCOUNTS)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.GET_ACCOUNTS) || Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP_MR1) {
             alert {
                 message = getString(R.string.required_permissions_message)
                 isCancelable = false
@@ -140,7 +140,7 @@ abstract class BaseAuthenticationActivity : BaseActivity(), OnAccountsUpdateList
     }
 
     fun removeLocalAccount() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED || Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
             val accountManager = AccountManager.get(this@BaseAuthenticationActivity)
             if (AccountsManager.accountExistByType(packageName, accountManager.getAccountsByType(packageName))) {
                 val account = accountManager.getAccountsByType(packageName)[0]

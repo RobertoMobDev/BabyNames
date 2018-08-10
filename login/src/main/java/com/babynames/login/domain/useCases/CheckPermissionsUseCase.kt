@@ -6,8 +6,9 @@ import com.babynames.core.domain.useCases.UseCase
 import com.babynames.login.domain.entities.requestObjects.CheckPermissionsRequestObject
 import com.babynames.login.domain.exceptions.CheckPermissionsException
 import io.reactivex.Observable
+import javax.inject.Inject
 
-class CheckPermissionsUseCase(threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread) : UseCase<Boolean, CheckPermissionsRequestObject>(threadExecutor, postExecutionThread) {
+class CheckPermissionsUseCase @Inject constructor(threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread) : UseCase<Boolean, CheckPermissionsRequestObject>(threadExecutor, postExecutionThread) {
 
     override fun createObservable(params: CheckPermissionsRequestObject): Observable<Boolean> =
             when {

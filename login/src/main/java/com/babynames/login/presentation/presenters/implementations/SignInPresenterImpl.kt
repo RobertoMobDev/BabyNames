@@ -1,6 +1,5 @@
 package com.babynames.login.presentation.presenters.implementations
 
-import android.os.Bundle
 import com.babynames.core.presentation.presenters.AbsPresenter
 import com.babynames.login.domain.entities.requestObjects.CheckPermissionsRequestObject
 import com.babynames.login.domain.entities.requestObjects.CreateLocalAccountRequestObject
@@ -15,6 +14,8 @@ import com.babynames.login.presentation.observers.RecoverFacebookInfoObserver
 import com.babynames.login.presentation.observers.SignInObserver
 import com.babynames.login.presentation.presenters.abstractions.SignInPresenter
 import com.babynames.login.presentation.viewModels.SignInViewModel
+import com.facebook.GraphRequest
+import com.facebook.GraphResponse
 import javax.inject.Inject
 
 class SignInPresenterImpl @Inject constructor(private val checkPermissionsUseCase: CheckPermissionsUseCase,
@@ -35,8 +36,8 @@ class SignInPresenterImpl @Inject constructor(private val checkPermissionsUseCas
         this.checkPermissionsUseCase.execute(CheckPermissionsObserver(this.view), checkPermissionsRequestObject)
     }
 
-    override fun getFacebookInfo(bundle: Bundle) {
-        this.facebookInfoUseCase.execute(RecoverFacebookInfoObserver(this.view), bundle)
+    override fun getFacebookInfo(graphRequest: GraphRequest) {
+        this.facebookInfoUseCase.execute(RecoverFacebookInfoObserver(this.view), graphRequest)
     }
 
     override fun signIn(signInRequestObject: SignInRequestObject) {

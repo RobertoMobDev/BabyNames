@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">login</string>
+    <string name="package_name">com.babynames.babynames</string>
 
     <string name="welcome_screen_message">Bienvenido a Baby Names</string>
     <string name="welcome_screen_description">El mejor catálogo con los nombres perfectos para bebé hecho App.</string>
