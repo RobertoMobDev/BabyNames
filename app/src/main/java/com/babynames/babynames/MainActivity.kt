@@ -1,13 +1,17 @@
 package com.babynames.babynames
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import com.babynames.babynames.R
+import com.babynames.core.domain.entities.UserProfile
+import com.babynames.core.presentation.activities.BaseAuthenticationActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseAuthenticationActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun getLayoutResId(): Int = R.layout.activity_main
+
+    override fun initView() {
+
+    }
+
+    override fun getUserProfile(userProfile: UserProfile) {
+
     }
 }

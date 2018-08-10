@@ -17,6 +17,7 @@ import com.babynames.core.presentation.account.AccountsManager
 import com.babynames.core.presentation.account.AccountsManager.REQUEST_CODE_FOR_REMOVE_ACCOUNT
 import com.babynames.core.presentation.account.AccountsManager.REQUEST_PERMISSIONS_CODE
 import com.babynames.core.presentation.managers.PermissionsManager
+import com.facebook.login.LoginManager
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.cancelButton
 import org.jetbrains.anko.okButton
@@ -80,6 +81,7 @@ abstract class BaseAuthenticationActivity : BaseActivity(), OnAccountsUpdateList
                 }
             }
         } else {
+            LoginManager.getInstance().logOut()
             AccountManager.get(this).addAccount(packageName, null, null, null, this, null, null)
         }
     }
@@ -145,8 +147,10 @@ abstract class BaseAuthenticationActivity : BaseActivity(), OnAccountsUpdateList
             if (AccountsManager.accountExistByType(packageName, accountManager.getAccountsByType(packageName))) {
                 val account = accountManager.getAccountsByType(packageName)[0]
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+                    LoginManager.getInstance().logOut()
                     accountManager.removeAccount(account, this@BaseAuthenticationActivity, null, null)
                 } else {
+                    LoginManager.getInstance().logOut()
                     accountManager.removeAccount(account, null, null)
                 }
             }

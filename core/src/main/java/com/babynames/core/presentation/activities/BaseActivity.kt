@@ -11,25 +11,15 @@ abstract class BaseActivity : AppCompatActivity() {
 
     abstract fun getLayoutResId(): Int
 
-    abstract fun getTransitions(): Transitions
-
     abstract fun initView()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val transitions = this.getTransitions()
-        this.overridePendingTransition(transitions.onCreateEnterAnimation, transitions.onCreateExitAnimation)
         super.onCreate(savedInstanceState)
         if (getLayoutResId() != 0) {
             setContentView(getLayoutResId())
         }
         initView()
 
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val transitions = this.getTransitions()
-        this.overridePendingTransition(transitions.onBackPressedEnterAnimation, transitions.onBackPressedExitAnimation)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

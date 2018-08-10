@@ -86,6 +86,9 @@ dependencies {
     //Dagger
     api 'com.google.dagger:dagger:2.15'
 
+    //Facebook
+    api 'com.facebook.android:facebook-login:4.34.0'
+
     //Room
     kapt 'android.arch.persistence.room:compiler:1.1.1'
 
