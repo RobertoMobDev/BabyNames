@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="4"
+    android:orientation="vertical"
+    tools:context=".GenderActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/gender_header_general_margins"
+        android:layout_marginEnd="@dimen/gender_header_general_margins"
+        android:layout_marginStart="@dimen/gender_header_general_margins"
+        android:layout_marginTop="@dimen/gender_header_general_margins"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="@font/proxima_bold"
+        android:gravity="center"
+        android:text="@string/gender_select_text"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/gender_options_text_size" />
+
+    <TextView
+        android:id="@+id/text_gender_boy"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorBlueBoy"
+        android:fontFamily="@font/proxima_bold"
+        android:gravity="center"
+        android:text="@string/gender_select_boy"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/gender_options_text_size" />
+
+    <TextView
+        android:id="@+id/text_gender_girl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPinkGirl"
+        android:fontFamily="@font/proxima_bold"
+        android:gravity="center"
+        android:text="@string/gender_select_girl"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/gender_options_text_size" />
+
+    <TextView
+        android:id="@+id/text_gender_surprise"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorSurprise"
+        android:fontFamily="@font/proxima_bold"
+        android:gravity="center"
+        android:text="@string/gender_select_surprise"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/gender_options_text_size" />
+
+</LinearLayout>

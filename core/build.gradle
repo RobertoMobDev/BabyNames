@@ -48,7 +48,7 @@ dependencies {
     api 'com.airbnb.android:lottie:2.5.1'
 
     //Glide
-    api 'com.github.bumptech.glide:glide:4.6.1'
+    api 'com.github.bumptech.glide:glide:4.7.1'
     api 'com.android.support:support-v4:27.1.1'
     kapt 'com.github.bumptech.glide:compiler:4.6.1'
 
@@ -88,6 +88,9 @@ dependencies {
 
     //Facebook
     api 'com.facebook.android:facebook-login:4.34.0'
+
+    //Kotlin Commons
+    api 'com.github.knockmark10:KotlinCommons:1.7.0.8'
 
     //Room
     kapt 'android.arch.persistence.room:compiler:1.1.1'

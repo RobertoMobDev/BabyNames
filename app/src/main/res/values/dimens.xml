@@ -10,6 +10,10 @@
     <dimen name="welcome_button_side_margins">16dp</dimen>
     <dimen name="welcome_button_bottom_margins">16dp</dimen>
 
+    <!-- Gender activity dimensions -->
+    <dimen name="gender_header_general_margins">4dp</dimen>
+    <dimen name="gender_options_text_size">20sp</dimen>
+
     <!-- Welcome fragment dimensions -->
     <dimen name="welcome_fragment_animation_size">180dp</dimen>
     <dimen name="welcome_fragment_animation_bottom_margins">40dp</dimen>
@@ -41,10 +45,6 @@
     <dimen name="finish_fragment_message_header_size">24sp</dimen>
     <dimen name="finish_fragment_message_body_side_margins">16dp</dimen>
     <dimen name="finish_fragment_message_body_size">20sp</dimen>
-
-    <!-- Gender activity dimensions -->
-    <dimen name="gender_header_general_margins">4dp</dimen>
-    <dimen name="gender_options_text_size">20sp</dimen>
 
     <!-- Names fragment dimensions -->
     <dimen name="names_fragment_animation_size">180dp</dimen>

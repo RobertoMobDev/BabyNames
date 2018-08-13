@@ -11,18 +11,34 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
+import com.babynames.babynames.presentation.components.DaggerGenderComponent
 import com.babynames.core.presentation.account.AccountsManager
+import com.babynames.core.presentation.getApplicationComponent
 import com.babynames.core.presentation.managers.PermissionsManager
 import com.babynames.login.presentation.WelcomeActivity
+import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
 import org.jetbrains.anko.accountManager
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.cancelButton
 import org.jetbrains.anko.okButton
+import javax.inject.Inject
 
 class SplashActivity : AppCompatActivity() {
 
+    @Inject
+    lateinit var sharedPreferencesManager: SharedPreferencesManager
+
+    private val genderComponent by lazy {
+        DaggerGenderComponent.builder()
+                .applicationComponent(this.getApplicationComponent())
+                .build()
+    }
+
+    private val GENDER_SELECTED = "gender"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.genderComponent.inject(this)
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED || Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
             this.manageIntent(this.accountManager)
@@ -36,9 +52,15 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this, WelcomeActivity::class.java)
             startActivityForResult(intent, AccountsManager.REQUEST_CODE_SIGN_IN)
         } else {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (sharedPreferencesManager.getStringPreference(GENDER_SELECTED).isNotEmpty()) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                val intent = Intent(this, GenderActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 
@@ -70,9 +92,15 @@ class SplashActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == AccountsManager.REQUEST_CODE_SIGN_IN && resultCode == AccountsManager.RESULT_CODE_ACCOUNT_CREATED) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (sharedPreferencesManager.getStringPreference(GENDER_SELECTED).isNotEmpty()) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                val intent = Intent(this, GenderActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         } else {
             finish()
         }
