@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorWhite"
+    tools:context=".presentation.fragments.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/profile_layout_section"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_fragment_section_profile_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/image_user_picture"
+                android:layout_width="@dimen/profile_fragment_user_pic_size"
+                android:layout_height="@dimen/profile_fragment_user_pic_size"
+                android:layout_marginLeft="@dimen/profile_fragment_user_pic_start_margins"
+                android:layout_marginRight="@dimen/profile_fragment_user_pic_end_margins"
+                android:layout_marginStart="@dimen/profile_fragment_user_pic_start_margins"
+                android:layout_marginEnd="@dimen/profile_fragment_user_pic_end_margins"
+                android:contentDescription="@null"
+                android:background="@drawable/shape_user_picture"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/profile_fragment_user_name_bottom_margins"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/profile_fragment_user_name_size"
+                    android:fontFamily="@font/proxima_bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/profile_fragment_logout_size"
+                    android:fontFamily="@font/proxima_bold"
+                    android:text="@string/profile_logout_text"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/partner_layout_section"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_fragment_section_profile_height"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/text_add_partner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/profile_fragment_add_couple_side_margins"
+                android:layout_marginLeft="@dimen/profile_fragment_add_couple_side_margins"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/profile_fragment_add_couple_size"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/profile_partner_text"/>
+
+            <RelativeLayout
+                android:id="@+id/couple_profile_layout_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/text_couple_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/profile_fragment_couple_name_start_margins"
+                        android:layout_marginRight="@dimen/profile_fragment_couple_name_end_margins"
+                        android:layout_marginStart="@dimen/profile_fragment_couple_name_start_margins"
+                        android:layout_marginEnd="@dimen/profile_fragment_couple_name_end_margins"
+                        android:layout_marginBottom="@dimen/profile_fragment_couple_name_bottom_margins"
+                        android:textStyle="normal"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/profile_fragment_couple_name_size"
+                        android:fontFamily="@font/proxima_bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/profile_fragment_manage_text_start_margins"
+                        android:layout_marginRight="@dimen/profile_fragment_manage_text_end_margins"
+                        android:layout_marginStart="@dimen/profile_fragment_manage_text_start_margins"
+                        android:layout_marginEnd="@dimen/profile_fragment_manage_text_end_margins"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/profile_fragment_manage_text_size"
+                        android:fontFamily="@font/proxima_bold"
+                        android:text="@string/profile_manage_partner_text"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image_couple_picture"
+                    android:layout_width="@dimen/profile_fragment_user_pic_size"
+                    android:layout_height="@dimen/profile_fragment_user_pic_size"
+                    android:layout_marginLeft="@dimen/profile_fragment_user_pic_start_margins"
+                    android:layout_marginRight="@dimen/profile_fragment_user_pic_end_margins"
+                    android:layout_marginStart="@dimen/profile_fragment_user_pic_start_margins"
+                    android:layout_marginEnd="@dimen/profile_fragment_user_pic_end_margins"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@null"
+                    android:background="@drawable/shape_user_picture"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gender_layout_section"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_fragment_general_section_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/profile_fragment_icon_size"
+                android:layout_height="@dimen/profile_fragment_icon_size"
+                android:layout_marginLeft="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginRight="@dimen/profile_fragment_icon_end_margins"
+                android:layout_marginStart="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginEnd="@dimen/profile_fragment_icon_end_margins"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_change_gender"
+                android:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/profile_fragment_general_section_text_size"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/profile_gender_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/about_layout_section"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_fragment_general_section_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/profile_fragment_icon_size"
+                android:layout_height="@dimen/profile_fragment_icon_size"
+                android:layout_marginLeft="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginRight="@dimen/profile_fragment_icon_end_margins"
+                android:layout_marginStart="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginEnd="@dimen/profile_fragment_icon_end_margins"
+                android:src="@drawable/icon_about_us"
+                android:contentDescription="@null"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/profile_about_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/profile_fragment_general_section_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/share_layout_section"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/profile_fragment_icon_size"
+                android:layout_height="@dimen/profile_fragment_icon_size"
+                android:layout_marginLeft="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginRight="@dimen/profile_fragment_icon_end_margins"
+                android:layout_marginStart="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginEnd="@dimen/profile_fragment_icon_end_margins"
+                android:src="@drawable/icon_shape_app"
+                android:contentDescription="@null"
+                android:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/profile_fragment_general_section_text_size"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/profile_share_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rate_layout_section"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/profile_fragment_icon_size"
+                android:layout_height="@dimen/profile_fragment_icon_size"
+                android:layout_marginLeft="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginRight="@dimen/profile_fragment_icon_end_margins"
+                android:layout_marginStart="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginEnd="@dimen/profile_fragment_icon_end_margins"
+                android:src="@drawable/icon_rate_us"
+                android:contentDescription="@null"
+                android:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/profile_fragment_general_section_text_size"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/profile_rate_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/feedback_layout_section"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/profile_fragment_icon_size"
+                android:layout_height="@dimen/profile_fragment_icon_size"
+                android:layout_marginLeft="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginRight="@dimen/profile_fragment_icon_end_margins"
+                android:layout_marginStart="@dimen/profile_fragment_icon_start_margins"
+                android:layout_marginEnd="@dimen/profile_fragment_icon_end_margins"
+                android:src="@drawable/icon_feedback"
+                android:contentDescription="@null"
+                android:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/profile_fragment_general_section_text_size"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/profile_feedback_text"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

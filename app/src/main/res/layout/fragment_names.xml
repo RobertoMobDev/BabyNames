@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".presentation.fragments.NamesFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_empty_names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_empty_names"
+            android:layout_width="@dimen/names_fragment_animation_size"
+            android:layout_height="@dimen/names_fragment_animation_size"
+            android:layout_marginBottom="@dimen/names_fragment_animation_bottom_margins"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/text_empty_names_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/names_message_header_bottom_margins"
+            android:layout_marginEnd="@dimen/names_message_header_side_margins"
+            android:layout_marginLeft="@dimen/names_message_header_side_margins"
+            android:layout_marginRight="@dimen/names_message_header_side_margins"
+            android:layout_marginStart="@dimen/names_message_header_side_margins"
+            android:fontFamily="@font/proxima_bold"
+            android:gravity="center"
+            android:text="@string/names_empty_list_header"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/names_message_header_size"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/text_empty_names_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/names_message_side_margins"
+            android:layout_marginLeft="@dimen/names_message_side_margins"
+            android:layout_marginRight="@dimen/names_message_side_margins"
+            android:layout_marginStart="@dimen/names_message_side_margins"
+            android:fontFamily="@font/proxima_regular"
+            android:gravity="center"
+            android:text="@string/names_empty_list_message"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/names_message_size"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <com.mindorks.placeholderview.SwipePlaceHolderView
+        android:id="@+id/swipe_names_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/names_swipe_view_side_margins"
+        android:layout_marginLeft="@dimen/names_swipe_view_side_margins"
+        android:layout_marginRight="@dimen/names_swipe_view_side_margins"
+        android:layout_marginStart="@dimen/names_swipe_view_side_margins" />
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/circular_progress_names"
+        android:layout_width="@dimen/names_circular_progress_size"
+        android:layout_height="@dimen/names_circular_progress_size"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:visibility="gone"
+        app:cpv_color="@color/colorPrimary"
+        app:cpv_indeterminate="true" />
+
+</FrameLayout>

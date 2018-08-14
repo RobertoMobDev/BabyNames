@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".presentation.fragments.MatchesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linear_no_couple_section"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/partner_animation_view"
+                android:layout_width="@dimen/matches_fragment_animation_size"
+                android:layout_height="@dimen/matches_fragment_animation_size"
+                android:layout_marginBottom="@dimen/matches_fragment_animation_top_margins"
+                android:layout_marginTop="@dimen/matches_fragment_animation_top_margins"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/matches_fragment_message_header_side_margins"
+                android:layout_marginStart="@dimen/matches_fragment_message_header_side_margins"
+                android:fontFamily="@font/proxima_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/matches_main_message"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/matches_fragment_message_header_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/matches_fragment_message_bottom_margin"
+                android:layout_marginTop="@dimen/matches_fragment_message_top_margin"
+                android:fontFamily="@font/proxima_regular"
+                android:gravity="center_horizontal"
+                android:text="@string/matches_secondary_message"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/matches_fragment_message_size" />
+
+            <Button
+                android:id="@+id/button_set_partner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorNavBarBack"
+                android:fontFamily="@font/proxima_bold"
+                android:paddingEnd="@dimen/matches_fragment_button_side_padding"
+                android:paddingStart="@dimen/matches_fragment_button_side_padding"
+                android:text="@string/matches_button_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/matches_fragment_button_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_matches_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_matches_empty"
+                android:layout_width="@dimen/favorites_fragment_animation_size"
+                android:layout_height="@dimen/favorites_fragment_animation_size"
+                android:layout_marginBottom="@dimen/favorites_fragment_animation_bottom_margins"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/text_empty_matches_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/favorites_fragment_message_header_bottom_margins"
+                android:fontFamily="@font/proxima_bold"
+                android:gravity="center"
+                android:text="@string/matches_empty_list_header"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/favorites_fragment_message_header_size"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/text_empty_matches_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/favorites_fragment_message_side_margins"
+                android:layout_marginLeft="@dimen/favorites_fragment_message_side_margins"
+                android:layout_marginRight="@dimen/favorites_fragment_message_side_margins"
+                android:layout_marginStart="@dimen/favorites_fragment_message_side_margins"
+                android:fontFamily="@font/proxima_regular"
+                android:gravity="center"
+                android:text="@string/matches_empty_list_message"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/favorites_fragment_message_size"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_couple_matches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/favorites_fragment_recycler_general_margins"
+        android:layout_marginLeft="@dimen/favorites_fragment_recycler_general_margins"
+        android:layout_marginRight="@dimen/favorites_fragment_recycler_general_margins"
+        android:layout_marginStart="@dimen/favorites_fragment_recycler_general_margins"
+        android:layout_marginTop="@dimen/favorites_fragment_recycler_general_margins"
+        android:visibility="gone" />
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/circular_progress_matches"
+        android:layout_width="@dimen/favorites_circular_progress_size"
+        android:layout_height="@dimen/favorites_circular_progress_size"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:visibility="gone"
+        app:cpv_color="@color/colorPrimary"
+        app:cpv_indeterminate="true" />
+
+</FrameLayout>

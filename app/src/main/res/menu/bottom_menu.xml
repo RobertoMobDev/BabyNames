@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_names"
+        android:enabled="true"
+        android:title="@string/bottom_bar_names_text"
+        android:icon="@drawable/thumbs" />
+
+    <item android:id="@+id/action_matches"
+        android:enabled="true"
+        android:title="@string/bottom_bar_matches_text"
+        android:icon="@drawable/matches" />
+
+    <item android:id="@+id/action_favorites"
+        android:enabled="true"
+        android:title="@string/bottom_bar_favorites_text"
+        android:icon="@drawable/favorites" />
+
+    <item android:id="@+id/action_profile"
+        android:enabled="true"
+        android:title="@string/bottom_bar_profile_text"
+        android:icon="@drawable/profile" />
+</menu>

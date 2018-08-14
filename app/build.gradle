@@ -29,6 +29,7 @@ dependencies {
     implementation project(":login")
 
     //Dagger
+    implementation 'com.android.support:support-v4:27.1.1'
     kapt 'com.google.dagger:dagger-compiler:2.15'
 
     testImplementation 'junit:junit:4.12'
