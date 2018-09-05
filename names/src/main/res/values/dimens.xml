@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Names fragment dimensions -->
+    <dimen name="names_fragment_animation_size">180dp</dimen>
+    <dimen name="names_fragment_animation_bottom_margins">40dp</dimen>
+    <dimen name="names_message_header_bottom_margins">20dp</dimen>
+    <dimen name="names_message_header_side_margins">30dp</dimen>
+    <dimen name="names_message_header_size">20sp</dimen>
+    <dimen name="names_message_side_margins">20dp</dimen>
+    <dimen name="names_message_size">16sp</dimen>
+    <dimen name="names_swipe_view_side_margins">20dp</dimen>
+    <dimen name="names_circular_progress_size">50dp</dimen>
+
+    <!-- Name layout dimensions -->
+    <dimen name="name_layout_card_width_size">300dp</dimen>
+    <dimen name="name_layout_card_height_size">350dp</dimen>
+    <dimen name="name_layout_card_top_margin">10dp</dimen>
+    <dimen name="name_layout_card_bottom_margin">50dp</dimen>
+    <dimen name="name_layout_card_name_header_top_padding">20dp</dimen>
+    <dimen name="name_layout_card_name_side_margins">20dp</dimen>
+    <dimen name="name_layout_card_name_size">24sp</dimen>
+    <dimen name="name_layout_card_name_content_general_padding">20dp</dimen>
+    <dimen name="name_layout_card_name_content_bottom_margin">20dp</dimen>
+    <dimen name="name_layout_card_name_meaning_header_bottom_margin">10dp</dimen>
+    <dimen name="name_layout_card_name_meaning_header_size">24sp</dimen>
+    <dimen name="name_layout_card_name_meaning_bottom_margin">20dp</dimen>
+    <dimen name="name_layout_card_name_meaning_size">20sp</dimen>
+    <dimen name="name_layout_card_name_origin_header_bottom_margin">10dp</dimen>
+    <dimen name="name_layout_card_name_origin_header_size">24sp</dimen>
+    <dimen name="name_layout_card_name_origin_size">20sp</dimen>
+</resources>

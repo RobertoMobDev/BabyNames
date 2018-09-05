@@ -45,12 +45,6 @@
     <string name="favorite_dialog_first_option">Eliminar nombre de favoritos</string>
     <string name="favorite_dialog_negative">CANCELAR</string>
 
-    <!-- Names Screen Strings-->
-    <string name="names_meaning_header_text">Significado:</string>
-    <string name="names_origin_header_text">Origen:</string>
-    <string name="names_empty_list_header">Oh oh.. parece que se terminaron…</string>
-    <string name="names_empty_list_message">No te preocupes, toca el icono de actualizar y te mostraremos los nombres que aun no están en tu lista de favoritos.</string>
-
     <!--Bottom Bar Strings-->
     <string name="bottom_bar_names_text">Nombres de Bebé</string>
     <string name="bottom_bar_matches_text">Coincidencias</string>

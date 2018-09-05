@@ -226,6 +226,10 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
         }.show()
     }
 
+    override fun displayError(errorMessage: Int) {
+
+    }
+
     override fun onSuccess(result: LoginResult?) {
         this.signInPresenter.getFacebookInfo(this.facebookGraphRequest)
     }

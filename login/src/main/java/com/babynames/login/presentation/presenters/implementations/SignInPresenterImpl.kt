@@ -15,7 +15,6 @@ import com.babynames.login.presentation.observers.SignInObserver
 import com.babynames.login.presentation.presenters.abstractions.SignInPresenter
 import com.babynames.login.presentation.viewModels.SignInViewModel
 import com.facebook.GraphRequest
-import com.facebook.GraphResponse
 import javax.inject.Inject
 
 class SignInPresenterImpl @Inject constructor(private val checkPermissionsUseCase: CheckPermissionsUseCase,
@@ -30,6 +29,9 @@ class SignInPresenterImpl @Inject constructor(private val checkPermissionsUseCas
     override fun onDestroy() {
         super.onDestroy()
         this.checkPermissionsUseCase.dispose()
+        this.facebookInfoUseCase.dispose()
+        this.signInUseCase.dispose()
+        this.createLocalAccountUseCase.dispose()
     }
 
     override fun checkPermissions(checkPermissionsRequestObject: CheckPermissionsRequestObject) {

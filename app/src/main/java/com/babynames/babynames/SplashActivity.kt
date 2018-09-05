@@ -52,7 +52,7 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this, WelcomeActivity::class.java)
             startActivityForResult(intent, AccountsManager.REQUEST_CODE_SIGN_IN)
         } else {
-            if (sharedPreferencesManager.getStringPreference(GENDER_SELECTED).isNotEmpty()) {
+            if (sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, "").isNotEmpty()) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -92,7 +92,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == AccountsManager.REQUEST_CODE_SIGN_IN && resultCode == AccountsManager.RESULT_CODE_ACCOUNT_CREATED) {
-            if (sharedPreferencesManager.getStringPreference(GENDER_SELECTED).isNotEmpty()) {
+            if (sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, "").isNotEmpty()) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()

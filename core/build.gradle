@@ -36,7 +36,7 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api 'com.android.support:appcompat-v7:27.1.1'
 
-    api 'com.android.support.constraint:constraint-layout:1.1.2'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
 
     //Design Library
     api 'com.android.support:design:27.1.1'
@@ -45,7 +45,7 @@ dependencies {
     api 'com.android.support:cardview-v7:27.1.1'
 
     //Lottie
-    api 'com.airbnb.android:lottie:2.5.1'
+    api 'com.airbnb.android:lottie:2.5.4'
 
     //Glide
     api 'com.github.bumptech.glide:glide:4.7.1'
@@ -55,18 +55,18 @@ dependencies {
     //Picasso
     api 'com.squareup.picasso:picasso:2.71828'
 
-    //PlaceHolder View
-    api 'com.mindorks:placeholderview:0.7.2'
+    //Swipe View
+    api 'link.fls:swipestack:0.3.0'
 
     //RxJava & RxAndroid Libraries
-    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
-    api 'io.reactivex.rxjava2:rxjava:2.1.12'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    api 'io.reactivex.rxjava2:rxjava:2.2.0'
 
     //Retrofit Library
     api 'com.squareup.retrofit2:retrofit:2.4.0'
     api 'com.squareup.retrofit2:converter-gson:2.4.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-    api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    api 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     api 'com.squareup.retrofit2:converter-scalars:2.1.0'
 
     //Anko
@@ -90,7 +90,7 @@ dependencies {
     api 'com.facebook.android:facebook-login:4.34.0'
 
     //Kotlin Commons
-    api 'com.github.knockmark10:KotlinCommons:1.7.0.8'
+    api 'com.github.knockmark10:KotlinCommons:2.0.4'
 
     //Room
     kapt 'android.arch.persistence.room:compiler:1.1.1'
