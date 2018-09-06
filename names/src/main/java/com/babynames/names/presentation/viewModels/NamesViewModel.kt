@@ -1,10 +1,10 @@
 package com.babynames.names.presentation.viewModels
 
-import com.babynames.core.presentation.viewModels.BaseView
+import com.babynames.core.presentation.viewModels.SingleProgressView
 import com.babynames.names.domain.entities.responseObjects.NameResponseObject
 
-interface NamesViewModel : BaseView {
+interface NamesViewModel : SingleProgressView {
 
-    fun onGetNamesSuccess(namesList: List<NameResponseObject>)
+    fun onGetNamesSuccess(namesList: ArrayList<NameResponseObject>)
 
 }

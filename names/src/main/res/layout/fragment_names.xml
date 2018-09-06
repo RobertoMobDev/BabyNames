@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_empty_names"
@@ -59,11 +59,12 @@
     <link.fls.swipestack.SwipeStack
         android:id="@+id/swipe_names_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/name_layout_card_height_size"
         android:layout_marginEnd="@dimen/names_swipe_view_side_margins"
         android:layout_marginLeft="@dimen/names_swipe_view_side_margins"
         android:layout_marginRight="@dimen/names_swipe_view_side_margins"
-        android:layout_marginStart="@dimen/names_swipe_view_side_margins" />
+        android:layout_marginStart="@dimen/names_swipe_view_side_margins"
+        android:layout_marginTop="@dimen/names_swipe_view_side_margins" />
 
     <com.github.rahatarmanahmed.cpv.CircularProgressView
         android:id="@+id/circular_progress_names"

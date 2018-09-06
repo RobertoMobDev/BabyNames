@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class NamesApiDataSourceImpl @Inject constructor(private val namesService: NamesService) : NamesDataSource {
 
-    override fun getNames(type: String): Observable<List<NameResponseObject>> =
+    override fun getNames(type: String): Observable<ArrayList<NameResponseObject>> =
             this.namesService.getNames(type).map {
                 if (it.success == "Names found") {
                     it.data

@@ -2,4 +2,10 @@
 <resources>
     <color name="colorPrimary">#696BBD</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlueBoy">#62BCD4</color>
+    <color name="colorBlueBoyAlpha">#CEEAF2</color>
+    <color name="colorPinkGirl">#FA8997</color>
+    <color name="colorPinkGirlAlpha">#FDD9DE</color>
+    <color name="colorSurprise">#F2C06C</color>
+    <color name="colorSurpriseAlpha">#FAE7C7</color>
 </resources>

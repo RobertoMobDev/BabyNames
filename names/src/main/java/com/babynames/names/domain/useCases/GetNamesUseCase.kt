@@ -8,8 +8,8 @@ import com.babynames.names.domain.repositoryAbstractions.NamesRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class GetNamesUseCase @Inject constructor(private val namesRepository: NamesRepository, threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread) : UseCase<List<NameResponseObject>, String>(threadExecutor, postExecutionThread) {
+class GetNamesUseCase @Inject constructor(private val namesRepository: NamesRepository, threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread) : UseCase<ArrayList<NameResponseObject>, String>(threadExecutor, postExecutionThread) {
 
-    override fun createObservable(params: String): Observable<List<NameResponseObject>> =
+    override fun createObservable(params: String): Observable<ArrayList<NameResponseObject>> =
             this.namesRepository.getNames(params)
 }

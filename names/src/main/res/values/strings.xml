@@ -7,4 +7,5 @@
     <string name="get_names_error">Error getting names list</string>
     <string name="names_meaning_header_text">Significado:</string>
     <string name="names_origin_header_text">Origen:</string>
+    <string name="fragment_names_title">Nombres de Bebé</string>
 </resources>

@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_name_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_option_name"
+    <LinearLayout
+        android:id="@+id/layout_text_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/name_layout_card_name_meaning_header_bottom_margin"
-        android:layout_marginEnd="@dimen/name_layout_card_name_side_margins"
-        android:layout_marginStart="@dimen/name_layout_card_name_side_margins"
-        android:fontFamily="@font/proxima_bold"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/name_layout_card_name_size"
-        android:textStyle="normal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/name_layout_card_name_header_top_padding"
+        android:paddingTop="@dimen/name_layout_card_name_header_top_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_option_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/name_layout_card_name_side_margins"
+            android:layout_marginStart="@dimen/name_layout_card_name_side_margins"
+            android:fontFamily="@font/proxima_bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/name_layout_card_name_size"
+            android:textStyle="normal" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/text_meaning_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:layout_marginEnd="@dimen/name_layout_card_name_side_margins"
         android:layout_marginStart="@dimen/name_layout_card_name_side_margins"
+        android:layout_marginTop="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:fontFamily="@font/proxima_bold"
         android:text="@string/names_meaning_header_text"
         android:textSize="@dimen/name_layout_card_name_meaning_header_size"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_option_name" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_text_name" />
 
     <TextView
         android:id="@+id/text_option_meaning"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:layout_marginEnd="@dimen/name_layout_card_name_side_margins"
         android:layout_marginStart="@dimen/name_layout_card_name_side_margins"
+        android:layout_marginTop="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:fontFamily="@font/proxima_bold"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/name_layout_card_name_meaning_size"
@@ -53,9 +64,9 @@
         android:id="@+id/text_origin_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:layout_marginEnd="@dimen/name_layout_card_name_side_margins"
         android:layout_marginStart="@dimen/name_layout_card_name_side_margins"
+        android:layout_marginTop="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:fontFamily="@font/proxima_bold"
         android:text="@string/names_origin_header_text"
         android:textSize="@dimen/name_layout_card_name_origin_header_size"
@@ -68,9 +79,9 @@
         android:id="@+id/text_option_origin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:layout_marginEnd="@dimen/name_layout_card_name_side_margins"
         android:layout_marginStart="@dimen/name_layout_card_name_side_margins"
+        android:layout_marginTop="@dimen/name_layout_card_name_meaning_header_bottom_margin"
         android:fontFamily="@font/proxima_bold"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/name_layout_card_name_origin_size"

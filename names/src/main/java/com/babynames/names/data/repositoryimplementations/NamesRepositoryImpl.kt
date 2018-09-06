@@ -8,6 +8,6 @@ import javax.inject.Inject
 
 class NamesRepositoryImpl @Inject constructor(private val namesDataSourceImpl: NamesApiDataSourceImpl) : NamesRepository {
 
-    override fun getNames(type: String): Observable<List<NameResponseObject>> = this.namesDataSourceImpl.getNames(type)
+    override fun getNames(type: String): Observable<ArrayList<NameResponseObject>> = this.namesDataSourceImpl.getNames(type)
 
 }

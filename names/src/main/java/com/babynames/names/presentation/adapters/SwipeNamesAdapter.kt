@@ -1,24 +1,49 @@
 package com.babynames.names.presentation.adapters
 
 import android.annotation.SuppressLint
+import android.os.Build
+import android.support.annotation.RequiresApi
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.babynames.names.R
+import com.babynames.names.domain.entities.responseObjects.NameResponseObject
 import kotlinx.android.synthetic.main.name_view.view.*
+import org.jetbrains.anko.backgroundColor
 
-class SwipeNamesAdapter(private val namesList: List<String>) : BaseAdapter() {
+class SwipeNamesAdapter(private var namesList: ArrayList<NameResponseObject>) : BaseAdapter() {
 
+    @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var mConvertView = convertView
+        val mConvertView: View = LayoutInflater.from(parent?.context).inflate(R.layout.name_view, parent, false)
+        val nameItem = this.namesList[position]
 
-        mConvertView = LayoutInflater.from(parent?.context).inflate(R.layout.name_view, parent, false)
+        val textName = mConvertView.text_option_name
+        val textMeaning = mConvertView.text_option_meaning
+        val textOrigin = mConvertView.text_option_origin
+        val nameViewLayout = mConvertView.layout_name_view
+        val nameTextLayout = mConvertView.layout_text_name
 
-        val textHeader = mConvertView.text_option_meaning
+        when (nameItem.gender) {
+            "male" -> {
+                nameViewLayout.backgroundColor = parent?.context?.getColor(R.color.colorBlueBoyAlpha)!!
+                nameTextLayout.backgroundColor = parent.context?.getColor(R.color.colorBlueBoy)!!
+            }
+            "female" -> {
+                nameViewLayout.backgroundColor = parent?.context?.getColor(R.color.colorPinkGirlAlpha)!!
+                nameTextLayout.backgroundColor = parent.context?.getColor(R.color.colorPinkGirl)!!
+            }
+            else -> {
+                nameViewLayout.backgroundColor = parent?.context?.getColor(R.color.colorSurpriseAlpha)!!
+                nameTextLayout.backgroundColor = parent.context?.getColor(R.color.colorSurprise)!!
+            }
+        }
 
-        textHeader.text = this.namesList[position]
+        textName.text = nameItem.name
+        textMeaning.text = nameItem.meaning
+        textOrigin.text = nameItem.origin
 
         return mConvertView
     }
@@ -30,4 +55,10 @@ class SwipeNamesAdapter(private val namesList: List<String>) : BaseAdapter() {
     override fun getItemId(position: Int): Long = position.toLong()
 
     override fun getCount(): Int = this.namesList.size
+
+    fun updateNamesList(list: ArrayList<NameResponseObject>) {
+        this.namesList.clear()
+        this.namesList.addAll(list)
+        notifyDataSetChanged()
+    }
 }
