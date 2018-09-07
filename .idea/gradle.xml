@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/database" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/names" />
+            <option value="$PROJECT_DIR$/profile" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

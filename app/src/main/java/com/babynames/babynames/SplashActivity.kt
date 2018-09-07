@@ -16,6 +16,7 @@ import com.babynames.core.presentation.account.AccountsManager
 import com.babynames.core.presentation.getApplicationComponent
 import com.babynames.core.presentation.managers.PermissionsManager
 import com.babynames.login.presentation.WelcomeActivity
+import com.facebook.login.LoginManager
 import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
 import org.jetbrains.anko.accountManager
 import org.jetbrains.anko.alert
@@ -50,6 +51,7 @@ class SplashActivity : AppCompatActivity() {
     private fun manageIntent(accountManager: AccountManager) {
         if (accountManager.getAccountsByType(this.packageName).isEmpty()) {
             val intent = Intent(this, WelcomeActivity::class.java)
+            LoginManager.getInstance().logOut()
             startActivityForResult(intent, AccountsManager.REQUEST_CODE_SIGN_IN)
         } else {
             if (sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, "").isNotEmpty()) {

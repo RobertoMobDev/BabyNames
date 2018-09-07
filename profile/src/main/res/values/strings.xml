@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">profile</string>
+
+    <!-- Profile Screen Strings-->
+    <string name="profile_logout_text">Cerrar sesión</string>
+    <string name="profile_partner_text">Agrega a tu pareja</string>
+    <string name="profile_gender_text">Cambiar el genero de tú bebé</string>
+    <string name="profile_about_text">Quienes somos</string>
+    <string name="profile_share_text">Comparte la app</string>
+    <string name="profile_rate_text">Calificanos</string>
+    <string name="profile_feedback_text">Ayudanos a mejorar</string>
+    <string name="profile_ads_text">Quitar publicidad</string>
+    <string name="profile_dialog_first_option">Escanea el QR de tu pareja</string>
+    <string name="profile_dialog_second_option">Mostrar mi código QR</string>
+    <string name="profile_dialog_title">Selecciona a tu pareja. Esta app funciona mejor en equipo</string>
+    <string name="profile_logout_dialog_title">¿Es momento de decir adiós?</string>
+    <string name="profile_logout_dialog_message">No te preocupes, guardamos los nombres para la proxima vez</string>
+    <string name="profile_logout_dialog_negative_button_text">Cancelar</string>
+    <string name="profile_logout_dialog_positive_button_text">Cerrar sesión</string>
+    <string name="profile_feedback_email_subject">Comentarios Baby Names Android App</string>
+    <string name="profile_feedback_chooser_header">Envianos un Email</string>
+    <string name="profile_feedback_failed_share_message">Por favor instala un cliente de email para enviarnos tus comentarios</string>
+    <string name="profile_manage_partner_text">Configuración de tú pareja</string>
+</resources>

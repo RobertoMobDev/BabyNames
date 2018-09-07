@@ -67,29 +67,6 @@
     <dimen name="favorites_fragment_message_size">16sp</dimen>
     <dimen name="favorites_circular_progress_size">50dp</dimen>
 
-    <!-- Profile fragment dimensions -->
-    <dimen name="profile_fragment_section_profile_height">100dp</dimen>
-    <dimen name="profile_fragment_user_pic_size">60dp</dimen>
-    <dimen name="profile_fragment_user_pic_start_margins">16dp</dimen>
-    <dimen name="profile_fragment_user_pic_end_margins">20dp</dimen>
-    <dimen name="profile_fragment_user_name_size">16sp</dimen>
-    <dimen name="profile_fragment_user_name_bottom_margins">10dp</dimen>
-    <dimen name="profile_fragment_logout_size">14sp</dimen>
-    <dimen name="profile_fragment_add_couple_side_margins">16dp</dimen>
-    <dimen name="profile_fragment_add_couple_size">16sp</dimen>
-    <dimen name="profile_fragment_couple_name_start_margins">16dp</dimen>
-    <dimen name="profile_fragment_couple_name_end_margins">20dp</dimen>
-    <dimen name="profile_fragment_couple_name_bottom_margins">10dp</dimen>
-    <dimen name="profile_fragment_couple_name_size">16sp</dimen>
-    <dimen name="profile_fragment_manage_text_start_margins">76dp</dimen>
-    <dimen name="profile_fragment_manage_text_end_margins">20dp</dimen>
-    <dimen name="profile_fragment_manage_text_size">14sp</dimen>
-    <dimen name="profile_fragment_general_section_height">60dp</dimen>
-    <dimen name="profile_fragment_icon_size">24dp</dimen>
-    <dimen name="profile_fragment_icon_start_margins">16dp</dimen>
-    <dimen name="profile_fragment_icon_end_margins">20dp</dimen>
-    <dimen name="profile_fragment_general_section_text_size">16sp</dimen>
-
     <!-- Favorite name layout dimensions -->
     <dimen name="favorite_name_card_radius">7dp</dimen>
     <dimen name="favorite_name_card_shadow">4dp</dimen>

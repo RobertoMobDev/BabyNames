@@ -4,10 +4,10 @@ import android.support.v4.app.Fragment
 import com.babynames.babynames.presentation.adapters.HomePagerAdapter
 import com.babynames.babynames.presentation.fragments.FavoritesFragment
 import com.babynames.babynames.presentation.fragments.MatchesFragment
-import com.babynames.babynames.presentation.fragments.ProfileFragment
 import com.babynames.core.domain.entities.UserProfile
 import com.babynames.core.presentation.activities.BaseAuthenticationActivity
 import com.babynames.names.presentation.fragments.NamesFragment
+import com.babynames.profile.presentation.fragments.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseAuthenticationActivity() {
