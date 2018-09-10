@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Gender activity dimensions -->
+    <dimen name="gender_header_general_margins">4dp</dimen>
+    <dimen name="gender_options_text_size">20sp</dimen>
+</resources>

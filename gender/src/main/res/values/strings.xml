@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">gender</string>
+
+    <!--Gender Screen Strings-->
+    <string name="gender_select_text">Selecciona el genero de tú bebé</string>
+    <string name="gender_select_boy">Niño</string>
+    <string name="gender_select_girl">Niña</string>
+    <string name="gender_select_surprise">Sorpresa</string>
+</resources>

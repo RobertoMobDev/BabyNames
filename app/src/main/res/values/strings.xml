@@ -4,12 +4,6 @@
     <string name="facebook_button_login_text">Acceder con Facebook</string>
     <string name="welcome_screen_login_cancelled">Login Cancelado</string>
 
-    <!--Gender Screen Strings-->
-    <string name="gender_select_text">Selecciona el genero de tú bebé</string>
-    <string name="gender_select_boy">Niño</string>
-    <string name="gender_select_girl">Niña</string>
-    <string name="gender_select_surprise">Sorpresa</string>
-
     <!-- Matches Screen Strings-->
     <string name="matches_main_message">Todo es mejor en pareja</string>
     <string name="matches_secondary_message">Parece que no has seleccionado a tu pareja, no te preocupes, lo resolvemos en un segundo</string>

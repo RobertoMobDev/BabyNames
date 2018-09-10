@@ -33,6 +33,7 @@ android {
 dependencies {
     implementation project(":core")
     implementation project(":login")
+    implementation project(":gender")
 
     //Dagger
     kapt 'com.google.dagger:dagger-compiler:2.15'

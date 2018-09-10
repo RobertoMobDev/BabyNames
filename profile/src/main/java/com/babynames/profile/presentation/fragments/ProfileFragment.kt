@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.babynames.gender.presentation.GenderActivity
 import com.babynames.login.presentation.WelcomeActivity
 import com.babynames.profile.R
 import com.facebook.login.LoginManager
@@ -38,6 +39,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         this.profile_layout_section.setOnClickListener(this)
         this.share_layout_section.setOnClickListener(this)
         this.feedback_layout_section.setOnClickListener(this)
+        this.gender_layout_section.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -47,6 +49,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             R.id.share_layout_section -> shareApp()
 
             R.id.feedback_layout_section -> feedBackApp()
+
+            R.id.gender_layout_section -> changeGender()
 
         }
     }
@@ -75,6 +79,12 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context!!, context!!.resources.getString(R.string.profile_feedback_failed_share_message), Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun changeGender() {
+        val intent = Intent(context, GenderActivity::class.java)
+        intent.putExtra("isGender", true)
+        startActivity(intent)
     }
 
     private fun logOut() {

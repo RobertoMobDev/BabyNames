@@ -94,7 +94,12 @@ class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener 
     }
 
     override fun onGetNamesSuccess(namesList: ArrayList<NameResponseObject>) {
-        swipeAdapter.updateNamesList(namesList)
+        val names = ArrayList<NameResponseObject>()
+        for (name in namesList) {
+            if (name.gender == "unisex")
+                names.add(name)
+        }
+        swipeAdapter.updateNamesList(names)
     }
 
     override fun displayError(errorMessage: String) {

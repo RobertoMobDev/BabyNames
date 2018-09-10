@@ -1,11 +1,11 @@
-package com.babynames.babynames
+package com.babynames.gender.presentation
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.babynames.babynames.presentation.components.DaggerGenderComponent
 import com.babynames.core.presentation.getApplicationComponent
+import com.babynames.gender.R
+import com.babynames.gender.presentation.components.DaggerGenderComponent
 import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
 import kotlinx.android.synthetic.main.activity_gender.*
 import javax.inject.Inject
@@ -21,6 +21,8 @@ class GenderActivity : AppCompatActivity(), View.OnClickListener {
                 .build()
     }
 
+    private var genderSelection: Boolean = false
+
     private val GENDER_SELECTED = "gender"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,23 +32,36 @@ class GenderActivity : AppCompatActivity(), View.OnClickListener {
         this.text_gender_boy.setOnClickListener(this)
         this.text_gender_girl.setOnClickListener(this)
         this.text_gender_surprise.setOnClickListener(this)
+
+        genderSelection = intent.getBooleanExtra("isGender", false)
     }
 
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.text_gender_boy -> {
                 sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "boy")
-                startActivity(Intent(this, MainActivity::class.java))
+                if (!genderSelection) {
+                    //startActivity(Intent(this, MainActivity::class.java))
+                }
+
                 finish()
             }
             R.id.text_gender_girl -> {
                 sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "girl")
-                startActivity(Intent(this, MainActivity::class.java))
+
+                if (!genderSelection) {
+                    //startActivity(Intent(this, MainActivity::class.java))
+                }
+
                 finish()
             }
             R.id.text_gender_surprise -> {
                 sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "surprise")
-                startActivity(Intent(this, MainActivity::class.java))
+
+                if (!genderSelection) {
+                    //startActivity(Intent(this, MainActivity::class.java))
+                }
+
                 finish()
             }
         }

@@ -11,10 +11,11 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
-import com.babynames.babynames.presentation.components.DaggerGenderComponent
+import com.babynames.babynames.presentation.components.DaggerSplashComponent
 import com.babynames.core.presentation.account.AccountsManager
 import com.babynames.core.presentation.getApplicationComponent
 import com.babynames.core.presentation.managers.PermissionsManager
+import com.babynames.gender.presentation.GenderActivity
 import com.babynames.login.presentation.WelcomeActivity
 import com.facebook.login.LoginManager
 import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
@@ -29,8 +30,8 @@ class SplashActivity : AppCompatActivity() {
     @Inject
     lateinit var sharedPreferencesManager: SharedPreferencesManager
 
-    private val genderComponent by lazy {
-        DaggerGenderComponent.builder()
+    private val splashComponent by lazy {
+        DaggerSplashComponent.builder()
                 .applicationComponent(this.getApplicationComponent())
                 .build()
     }
@@ -39,7 +40,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.genderComponent.inject(this)
+        this.splashComponent.inject(this)
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED || Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
             this.manageIntent(this.accountManager)
@@ -60,6 +61,7 @@ class SplashActivity : AppCompatActivity() {
                 finish()
             } else {
                 val intent = Intent(this, GenderActivity::class.java)
+                intent.putExtra("isGender", false)
                 startActivity(intent)
                 finish()
             }
