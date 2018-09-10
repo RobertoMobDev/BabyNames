@@ -1,2 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.babynames.profile" />
+    package="com.babynames.profile">
+
+    <application>
+        <activity android:name=".presentation.activities.AboutActivity" />
+    </application>
+
+</manifest>

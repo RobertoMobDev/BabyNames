@@ -25,14 +25,6 @@
     <string name="bottom_bar_favorites_text">Favoritos</string>
     <string name="bottom_bar_profile_text">Perfil</string>
 
-    <!-- About Screen Strings-->
-    <string name="about_ios_developer_text">ios Developer</string>
-    <string name="about_ios_developer_name">Carlos Rodriguez</string>
-    <string name="about_web_developer_text">web Developer</string>
-    <string name="about_web_developer_name">Manuel Ivan Herrera Maciel</string>
-    <string name="about_android_developer_text">android Developer</string>
-    <string name="about_android_developer_name">Roberto Carlos Cervantes</string>
-
     <!-- QR Screen Strings-->
     <string name="qr_main_message">Comparte tu código QR y comienza a elegir el
         nombre perfecto en pareja. Debajo está tú código QR personal</string>

@@ -22,4 +22,11 @@
     <dimen name="profile_fragment_icon_start_margins">16dp</dimen>
     <dimen name="profile_fragment_icon_end_margins">20dp</dimen>
     <dimen name="profile_fragment_general_section_text_size">16sp</dimen>
+
+    <!-- About fragment dimensions -->
+    <dimen name="about_fragment_general_padding">10dp</dimen>
+    <dimen name="about_fragment_animation_size">100dp</dimen>
+    <dimen name="about_fragment_ios_text_bottom_margin">10dp</dimen>
+    <dimen name="about_fragment_ios_text_size">16sp</dimen>
+    <dimen name="about_fragment_ios_text_name_size">14sp</dimen>
 </resources>

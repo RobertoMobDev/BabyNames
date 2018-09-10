@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import android.widget.Toast
 import com.babynames.gender.presentation.GenderActivity
 import com.babynames.login.presentation.WelcomeActivity
 import com.babynames.profile.R
+import com.babynames.profile.presentation.activities.AboutActivity
 import com.facebook.login.LoginManager
 import kotlinx.android.synthetic.main.fragment_profile.*
 import org.jetbrains.anko.cancelButton
@@ -25,6 +27,10 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         fun newInstance(): ProfileFragment {
             return ProfileFragment()
         }
+    }
+
+    private val dialogBuilder: AlertDialog.Builder by lazy {
+        AlertDialog.Builder(activity!!, R.style.AlertDialogStyle)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +46,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         this.share_layout_section.setOnClickListener(this)
         this.feedback_layout_section.setOnClickListener(this)
         this.gender_layout_section.setOnClickListener(this)
+        this.about_layout_section.setOnClickListener(this)
+        this.partner_layout_section.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -51,6 +59,10 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             R.id.feedback_layout_section -> feedBackApp()
 
             R.id.gender_layout_section -> changeGender()
+
+            R.id.about_layout_section -> aboutUs()
+
+            R.id.partner_layout_section -> setPartner()
 
         }
     }
@@ -85,6 +97,30 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         val intent = Intent(context, GenderActivity::class.java)
         intent.putExtra("isGender", true)
         startActivity(intent)
+    }
+
+    private fun aboutUs() {
+        startActivity(Intent(context, AboutActivity::class.java))
+    }
+
+    private fun setPartner() {
+        val items = arrayOf(getString(R.string.profile_dialog_first_option),
+                getString(R.string.profile_dialog_second_option))
+
+        dialogBuilder
+                .setTitle(context!!.resources.getString(R.string.profile_dialog_title))
+                .setItems(items) { _, p1 ->
+                    when (p1) {
+                        0 -> {
+
+                        }
+                        1 -> {
+
+                        }
+                    }
+                }
+        dialogBuilder.create()
+        dialogBuilder.show()
     }
 
     private fun logOut() {

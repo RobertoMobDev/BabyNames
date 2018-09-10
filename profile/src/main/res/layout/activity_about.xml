@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".presentation.activities.AboutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/about_fragment_general_padding">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_ios"
+            android:layout_width="@dimen/about_fragment_animation_size"
+            android:layout_height="@dimen/about_fragment_animation_size"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/about_fragment_ios_text_bottom_margin"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/about_ios_developer_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/about_fragment_ios_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/about_ios_developer_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/about_fragment_ios_text_name_size" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/about_fragment_ios_text_bottom_margin"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/about_android_developer_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/about_fragment_ios_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/about_android_developer_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/about_fragment_ios_text_name_size" />
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_android"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_web"
+            android:layout_width="@dimen/about_fragment_animation_size"
+            android:layout_height="@dimen/about_fragment_animation_size"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/about_fragment_ios_text_bottom_margin"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/about_web_developer_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/about_fragment_ios_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_bold"
+                android:text="@string/about_web_developer_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/about_fragment_ios_text_name_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

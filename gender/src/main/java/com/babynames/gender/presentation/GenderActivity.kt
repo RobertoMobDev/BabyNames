@@ -39,7 +39,7 @@ class GenderActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.text_gender_boy -> {
-                sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "boy")
+                sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "male")
                 if (!genderSelection) {
                     //startActivity(Intent(this, MainActivity::class.java))
                 }
@@ -47,7 +47,7 @@ class GenderActivity : AppCompatActivity(), View.OnClickListener {
                 finish()
             }
             R.id.text_gender_girl -> {
-                sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "girl")
+                sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "female")
 
                 if (!genderSelection) {
                     //startActivity(Intent(this, MainActivity::class.java))
@@ -56,7 +56,7 @@ class GenderActivity : AppCompatActivity(), View.OnClickListener {
                 finish()
             }
             R.id.text_gender_surprise -> {
-                sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "surprise")
+                sharedPreferencesManager.setSharedPreference(GENDER_SELECTED, "unisex")
 
                 if (!genderSelection) {
                     //startActivity(Intent(this, MainActivity::class.java))

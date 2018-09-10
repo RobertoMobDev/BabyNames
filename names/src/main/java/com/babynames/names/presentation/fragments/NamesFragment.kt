@@ -14,6 +14,7 @@ import com.babynames.names.presentation.components.NamesComponent
 import com.babynames.names.presentation.modules.NamesModule
 import com.babynames.names.presentation.presenters.abstractions.NamesPresenter
 import com.babynames.names.presentation.viewModels.NamesViewModel
+import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
 import kotlinx.android.synthetic.main.fragment_names.*
 import link.fls.swipestack.SwipeStack
 import org.jetbrains.anko.okButton
@@ -21,6 +22,9 @@ import org.jetbrains.anko.support.v4.alert
 import javax.inject.Inject
 
 class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener {
+
+    @Inject
+    lateinit var sharedPreferencesManager: SharedPreferencesManager
 
     @Inject
     lateinit var namesPresenter: NamesPresenter
@@ -35,6 +39,8 @@ class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener 
     private val swipeAdapter: SwipeNamesAdapter by lazy {
         SwipeNamesAdapter(arrayListOf())
     }
+
+    private val GENDER_SELECTED = "gender"
 
     companion object {
         fun newInstance(): NamesFragment {
@@ -96,10 +102,11 @@ class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener 
     override fun onGetNamesSuccess(namesList: ArrayList<NameResponseObject>) {
         val names = ArrayList<NameResponseObject>()
         for (name in namesList) {
-            if (name.gender == "unisex")
+            if (name.gender == "unisex" || name.gender == sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, ""))
                 names.add(name)
         }
         swipeAdapter.updateNamesList(names)
+        this.swipe_names_list.resetStack()
     }
 
     override fun displayError(errorMessage: String) {

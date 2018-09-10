@@ -21,4 +21,12 @@
     <string name="profile_feedback_chooser_header">Envianos un Email</string>
     <string name="profile_feedback_failed_share_message">Por favor instala un cliente de email para enviarnos tus comentarios</string>
     <string name="profile_manage_partner_text">Configuración de tú pareja</string>
+
+    <!-- About Screen Strings-->
+    <string name="about_ios_developer_text">ios Developer</string>
+    <string name="about_ios_developer_name">Carlos Rodriguez</string>
+    <string name="about_web_developer_text">web Developer</string>
+    <string name="about_web_developer_name">Manuel Ivan Herrera Maciel</string>
+    <string name="about_android_developer_text">android Developer</string>
+    <string name="about_android_developer_name">Roberto Carlos Cervantes</string>
 </resources>

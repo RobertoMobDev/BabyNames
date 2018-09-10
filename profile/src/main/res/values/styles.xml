@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- QR Code theme. -->
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/colorGrayText</item>
+        <item name="android:textColorSecondary">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+</resources>
