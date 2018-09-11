@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_scan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".presentation.activities.ScanQRActivity">
+
+    <com.budiyev.android.codescanner.CodeScannerView
+        android:id="@+id/scanner_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:autoFocusButtonColor="@android:color/white"
+        app:autoFocusButtonVisible="false"
+        app:flashButtonColor="@android:color/white"
+        app:flashButtonVisible="false"
+        app:frameAspectRatioHeight="1"
+        app:frameAspectRatioWidth="1"
+        app:frameColor="@android:color/white"
+        app:frameCornersSize="20dp"
+        app:frameSize="0.75"
+        app:frameThickness="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maskColor="@android:color/transparent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_scan_qr"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/scan_fragment_animation_size"
+        android:layout_marginBottom="@dimen/scan_fragment_animation_top_margins"
+        app:layout_constraintBottom_toTopOf="@+id/text_scan_qr_tutorial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/text_scan_qr_tutorial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/scan_fragment_message_side_margins"
+        android:layout_marginStart="@dimen/scan_fragment_message_side_margins"
+        android:fontFamily="@font/proxima_bold"
+        android:text="@string/scan_main_message"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/scan_fragment_message_size"
+        app:layout_constraintBottom_toTopOf="@+id/button_scan_qr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animation_scan_qr" />
+
+    <Button
+        android:id="@+id/button_scan_qr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/scan_fragment_message_side_margins"
+        android:layout_marginStart="@dimen/scan_fragment_message_side_margins"
+        android:layout_marginTop="@dimen/scan_fragment_button_top_margins"
+        android:background="@color/colorNavBarBack"
+        android:fontFamily="@font/proxima_bold"
+        android:padding="10dp"
+        android:text="@string/scan_button_text"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_scan_qr_tutorial" />
+
+</android.support.constraint.ConstraintLayout>

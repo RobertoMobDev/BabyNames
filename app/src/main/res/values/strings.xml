@@ -33,12 +33,6 @@
     <string name="qr_permission_no_granted_message">Este permiso es necesario para compartir tú código QR</string>
     <string name="qr_permission_no_granted_button_text">OK</string>
 
-    <!-- Scan Screen Strings-->
-    <string name="scan_main_message">Coloca el código QR frente a la cámara para que pueda ser escaneado como se muestra en la animación</string>
-    <string name="scan_permission_no_granted_message">Este permiso es necesario para escanear el código QR de tu pareja</string>
-    <string name="scan_permission_no_granted_button_text">OK</string>
-    <string name="scan_button_text">OK</string>
-
     <!-- Fragments Title Strings-->
     <string name="fragment_names_title">Nombres de Bebé</string>
     <string name="fragment_matches_title">Coincidencias</string>

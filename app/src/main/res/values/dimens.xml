@@ -91,11 +91,4 @@
     <dimen name="my_qr_fragment_message_size">16sp</dimen>
     <dimen name="my_qr_fragment_image_top_margins">20dp</dimen>
 
-    <!-- Scan fragment dimensions -->
-    <dimen name="scan_fragment_animation_size">180dp</dimen>
-    <dimen name="scan_fragment_animation_top_margins">20dp</dimen>
-    <dimen name="scan_fragment_message_side_margins">16dp</dimen>
-    <dimen name="scan_fragment_message_size">16sp</dimen>
-    <dimen name="scan_fragment_button_top_margins">20dp</dimen>
-
 </resources>

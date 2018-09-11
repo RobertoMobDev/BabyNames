@@ -29,4 +29,12 @@
     <dimen name="about_fragment_ios_text_bottom_margin">10dp</dimen>
     <dimen name="about_fragment_ios_text_size">16sp</dimen>
     <dimen name="about_fragment_ios_text_name_size">14sp</dimen>
+
+    <!-- Scan fragment dimensions -->
+    <dimen name="scan_fragment_animation_size">180dp</dimen>
+    <dimen name="scan_fragment_animation_top_margins">20dp</dimen>
+    <dimen name="scan_fragment_message_side_margins">16dp</dimen>
+    <dimen name="scan_fragment_message_size">16sp</dimen>
+    <dimen name="scan_fragment_button_top_margins">20dp</dimen>
+
 </resources>

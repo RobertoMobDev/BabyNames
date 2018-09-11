@@ -29,4 +29,11 @@
     <string name="about_web_developer_name">Manuel Ivan Herrera Maciel</string>
     <string name="about_android_developer_text">android Developer</string>
     <string name="about_android_developer_name">Roberto Carlos Cervantes</string>
+
+    <!-- Scan Screen Strings-->
+    <string name="scan_main_message">Coloca el código QR frente a la cámara para que pueda ser escaneado como se muestra en la animación</string>
+    <string name="scan_permission_no_granted_message">Este permiso es necesario para escanear el código QR de tu pareja</string>
+    <string name="scan_permission_no_granted_button_text">OK</string>
+    <string name="scan_button_text">OK</string>
+
 </resources>

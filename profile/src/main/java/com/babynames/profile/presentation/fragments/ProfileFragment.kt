@@ -15,6 +15,7 @@ import com.babynames.gender.presentation.GenderActivity
 import com.babynames.login.presentation.WelcomeActivity
 import com.babynames.profile.R
 import com.babynames.profile.presentation.activities.AboutActivity
+import com.babynames.profile.presentation.activities.ScanQRActivity
 import com.facebook.login.LoginManager
 import kotlinx.android.synthetic.main.fragment_profile.*
 import org.jetbrains.anko.cancelButton
@@ -112,7 +113,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 .setItems(items) { _, p1 ->
                     when (p1) {
                         0 -> {
-
+                            startActivity(Intent(context, ScanQRActivity::class.java))
                         }
                         1 -> {
 

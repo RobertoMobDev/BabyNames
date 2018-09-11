@@ -101,11 +101,18 @@ class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener 
 
     override fun onGetNamesSuccess(namesList: ArrayList<NameResponseObject>) {
         val names = ArrayList<NameResponseObject>()
-        for (name in namesList) {
-            if (name.gender == "unisex" || name.gender == sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, ""))
-                names.add(name)
+
+        if (sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, "") == "unisex") {
+            swipeAdapter.updateNamesList(namesList)
+        } else {
+            for (name in namesList) {
+                if (name.gender == "unisex" || name.gender == sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, ""))
+                    names.add(name)
+            }
+
+            swipeAdapter.updateNamesList(names)
         }
-        swipeAdapter.updateNamesList(names)
+
         this.swipe_names_list.resetStack()
     }
 

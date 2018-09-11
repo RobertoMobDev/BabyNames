@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".presentation.activities.AboutActivity" />
+        <activity android:name=".presentation.activities.ScanQRActivity" />
     </application>
 
 </manifest>

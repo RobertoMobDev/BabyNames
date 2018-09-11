@@ -3,6 +3,7 @@
     package="com.babynames.babynames">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name="com.babynames.core.presentation.BabyNamesApplication"

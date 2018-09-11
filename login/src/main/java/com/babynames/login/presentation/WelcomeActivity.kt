@@ -87,12 +87,6 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
         this.signInPresenter.bind(this)
     }
 
-    override fun onStop() {
-        super.onStop()
-        this.signInPresenter.onDestroy()
-    }
-
-
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == AccountsManager.REQUEST_PERMISSIONS_CODE) {
@@ -133,6 +127,8 @@ class WelcomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Sig
             this.mAccountAuthenticatorResponse = null
         }
         super.finish()
+
+        this.signInPresenter.onDestroy()
     }
 
 
