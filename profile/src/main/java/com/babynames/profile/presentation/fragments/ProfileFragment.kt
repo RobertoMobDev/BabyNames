@@ -6,32 +6,34 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.babynames.core.domain.entities.UserProfile
 import com.babynames.gender.presentation.GenderActivity
 import com.babynames.login.presentation.WelcomeActivity
 import com.babynames.profile.R
 import com.babynames.profile.presentation.activities.AboutActivity
+import com.babynames.profile.presentation.activities.MyCodeActivity
 import com.babynames.profile.presentation.activities.ScanQRActivity
+import com.babynames.profile.presentation.views.CircleTransformation
 import com.facebook.login.LoginManager
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_profile.*
-import org.jetbrains.anko.cancelButton
-import org.jetbrains.anko.okButton
+import org.jetbrains.anko.*
 import org.jetbrains.anko.support.v4.alert
 
 class ProfileFragment : Fragment(), View.OnClickListener {
 
     companion object {
-        fun newInstance(): ProfileFragment {
-            return ProfileFragment()
+        fun newInstance(userProfile: UserProfile?): ProfileFragment {
+            return ProfileFragment().apply {
+                this.arguments = Bundle().apply {
+                    this.putParcelable("user", userProfile)
+                }
+            }
         }
-    }
-
-    private val dialogBuilder: AlertDialog.Builder by lazy {
-        AlertDialog.Builder(activity!!, R.style.AlertDialogStyle)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +44,18 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val userProfile: UserProfile
+
+        if (arguments != null) {
+            userProfile = arguments?.getParcelable("user")!!
+
+            this.text_profile_name.text = userProfile.name
+            Picasso.get().load(userProfile.profileImage).transform(CircleTransformation()).into(this.image_user_picture)
+
+        }
+
+
 
         this.profile_layout_section.setOnClickListener(this)
         this.share_layout_section.setOnClickListener(this)
@@ -105,23 +119,31 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setPartner() {
-        val items = arrayOf(getString(R.string.profile_dialog_first_option),
-                getString(R.string.profile_dialog_second_option))
-
-        dialogBuilder
-                .setTitle(context!!.resources.getString(R.string.profile_dialog_title))
-                .setItems(items) { _, p1 ->
-                    when (p1) {
-                        0 -> {
-                            startActivity(Intent(context, ScanQRActivity::class.java))
-                        }
-                        1 -> {
-
-                        }
+        alert {
+            customView {
+                verticalLayout {
+                    textView(getString(R.string.profile_dialog_title)) {
+                        textColor = resources.getColor(R.color.colorPrimaryDark)
+                        textSize = 18f
+                        setPadding(36, 36, 16, 8)
                     }
+
+                    textView(getString(R.string.profile_dialog_first_option)) {
+                        textColor = resources.getColor(R.color.colorBlack)
+                        textSize = 16f
+                        setPadding(36, 36, 16, 8)
+                    }
+                            .setOnClickListener { startActivity(Intent(context, ScanQRActivity::class.java)) }
+
+                    textView(getString(R.string.profile_dialog_second_option)) {
+                        textColor = resources.getColor(R.color.colorBlack)
+                        textSize = 16f
+                        setPadding(36, 36, 16, 8)
+                    }.lparams { bottomMargin = dip(20) }
+                            .setOnClickListener { startActivity(Intent(context, MyCodeActivity::class.java)) }
                 }
-        dialogBuilder.create()
-        dialogBuilder.show()
+            }
+        }.show()
     }
 
     private fun logOut() {

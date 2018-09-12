@@ -4,7 +4,6 @@ import android.Manifest
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.transition.TransitionManager
-import android.util.Log
 import android.view.View
 import com.babynames.profile.R
 import com.budiyev.android.codescanner.CodeScanner
@@ -12,7 +11,7 @@ import com.budiyev.android.codescanner.DecodeCallback
 import com.ia.mchaveza.kotlin_library.PermissionCallback
 import com.ia.mchaveza.kotlin_library.PermissionManager
 import kotlinx.android.synthetic.main.activity_scan_qr.*
-import org.jetbrains.anko.alert
+import org.jetbrains.anko.*
 
 class ScanQRActivity : AppCompatActivity(), PermissionCallback {
 
@@ -46,8 +45,24 @@ class ScanQRActivity : AppCompatActivity(), PermissionCallback {
 
     override fun onPermissionDenied(permission: String) {
         alert {
-            title = "Mensaje"
-            message = "Este permiso es necesario para que BabyNames funcione correctamente."
+            customView {
+                verticalLayout {
+
+                    textView(context.getString(R.string.qr_permission_no_granted_title)) {
+                        textColor = resources.getColor(R.color.colorPrimaryDark)
+                        textSize = 18f
+                        setPadding(36, 36, 36, 8)
+                    }
+
+                    textView(context.getString(R.string.scan_permission_no_granted_message)) {
+                        textColor = resources.getColor(R.color.colorBlack)
+                        textSize = 16f
+                        setPadding(36, 36, 36, 8)
+                    }
+                }
+            }
+
+            okButton { }
         }.show()
     }
 

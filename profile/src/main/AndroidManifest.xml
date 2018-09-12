@@ -5,6 +5,7 @@
     <application>
         <activity android:name=".presentation.activities.AboutActivity" />
         <activity android:name=".presentation.activities.ScanQRActivity" />
+        <activity android:name=".presentation.activities.MyCodeActivity"></activity>
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseAuthenticationActivity() {
 
     private val fragmentList: List<Fragment> by lazy {
-        listOf(NamesFragment.newInstance(), MatchesFragment.newInstance(), FavoritesFragment.newInstance(), ProfileFragment.newInstance())
+        listOf(NamesFragment.newInstance(), MatchesFragment.newInstance(), FavoritesFragment.newInstance(), ProfileFragment.newInstance(this.userProfile))
     }
 
     private val homePagerAdapter: HomePagerAdapter by lazy {
@@ -23,7 +23,6 @@ class MainActivity : BaseAuthenticationActivity() {
     override fun getLayoutResId(): Int = R.layout.activity_main
 
     override fun initView() {
-        this.main_activity_fragment_container.adapter = homePagerAdapter
 
         this.bottom_nav_view.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -36,10 +35,9 @@ class MainActivity : BaseAuthenticationActivity() {
 
             true
         }
-
     }
 
     override fun getUserProfile(userProfile: UserProfile) {
-
+        this.main_activity_fragment_container.adapter = homePagerAdapter
     }
 }

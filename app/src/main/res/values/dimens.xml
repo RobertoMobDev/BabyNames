@@ -85,10 +85,4 @@
     <dimen name="about_fragment_ios_text_size">16sp</dimen>
     <dimen name="about_fragment_ios_text_name_size">14sp</dimen>
 
-    <!-- MyQR fragment dimensions -->
-    <dimen name="my_qr_fragment_message_top_margins">20dp</dimen>
-    <dimen name="my_qr_fragment_message_side_margins">16dp</dimen>
-    <dimen name="my_qr_fragment_message_size">16sp</dimen>
-    <dimen name="my_qr_fragment_image_top_margins">20dp</dimen>
-
 </resources>

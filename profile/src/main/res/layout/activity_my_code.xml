@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".presentation.activities.MyCodeActivity">
+
+    <TextView
+        android:id="@+id/text_my_qr_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/my_qr_fragment_message_side_margins"
+        android:layout_marginStart="@dimen/my_qr_fragment_message_side_margins"
+        android:layout_marginTop="@dimen/my_qr_fragment_message_top_margins"
+        android:fontFamily="@font/proxima_regular"
+        android:gravity="center_horizontal"
+        android:text="@string/qr_main_message"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/my_qr_fragment_message_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_qr_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/my_qr_fragment_image_top_margins"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_my_qr_message" />
+
+    <Button
+        android:id="@+id/button_share_qr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/my_qr_fragment_image_top_margins"
+        android:background="@color/colorNavBarBack"
+        android:text="@string/qr_button_text"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_qr_code" />
+
+</android.support.constraint.ConstraintLayout>

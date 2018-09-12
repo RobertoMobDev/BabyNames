@@ -25,14 +25,6 @@
     <string name="bottom_bar_favorites_text">Favoritos</string>
     <string name="bottom_bar_profile_text">Perfil</string>
 
-    <!-- QR Screen Strings-->
-    <string name="qr_main_message">Comparte tu código QR y comienza a elegir el
-        nombre perfecto en pareja. Debajo está tú código QR personal</string>
-    <string name="qr_button_text">Compartir</string>
-    <string name="qr_share_text">Comparte el código QR</string>
-    <string name="qr_permission_no_granted_message">Este permiso es necesario para compartir tú código QR</string>
-    <string name="qr_permission_no_granted_button_text">OK</string>
-
     <!-- Fragments Title Strings-->
     <string name="fragment_names_title">Nombres de Bebé</string>
     <string name="fragment_matches_title">Coincidencias</string>
