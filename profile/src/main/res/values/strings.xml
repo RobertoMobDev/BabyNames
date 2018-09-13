@@ -44,5 +44,10 @@
     <string name="qr_permission_no_granted_message">Este permiso es necesario para compartir tú código QR</string>
     <string name="qr_permission_no_granted_button_text">OK</string>
     <string name="qr_permission_no_granted_title">¿Permisos no otorgados?</string>
+    <string name="set_couple_error">Error configurando a tú pareja. Intenta de nuevo más tarde</string>
+    <string name="scan_qr_success_title">¡Felicidades!</string>
+    <string name="scan_qr_success_message">Tú pareja  ha sido asociada correctamente</string>
+    <string name="scan_qr_error_title">Error</string>
+    <string name="get_couple_error">Error recuperando la información de tú pareja. Intenta de nuevo más tarde</string>
 
 </resources>

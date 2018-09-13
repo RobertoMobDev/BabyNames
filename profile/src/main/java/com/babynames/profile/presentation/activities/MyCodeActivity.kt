@@ -29,7 +29,8 @@ class MyCodeActivity : AppCompatActivity(), View.OnClickListener, PermissionCall
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_code)
 
-        generateQRCode()
+        if (intent.getStringExtra("userId") != null && intent.getStringExtra("userId").isNotBlank())
+            generateQRCode(intent.getStringExtra("userId") )
 
         this.button_share_qr.setOnClickListener(this)
 
@@ -74,14 +75,14 @@ class MyCodeActivity : AppCompatActivity(), View.OnClickListener, PermissionCall
         shareQRCode()
     }
 
-    private fun generateQRCode() {
+    private fun generateQRCode(myCode: String) {
         val screenWidth = getScreenDimensions()[0]
         val screenHeight = getScreenDimensions()[1]
 
         bitmap = if (screenWidth >= 1080 && screenHeight >= 1794) {
-            QRCode.from("1").withSize(900, 900).bitmap()
+            QRCode.from(myCode).withSize(900, 900).bitmap()
         } else {
-            QRCode.from("1").withSize(300, 300).bitmap()
+            QRCode.from(myCode).withSize(300, 300).bitmap()
         }
 
         this.image_qr_code.imageBitmap = bitmap

@@ -1,7 +1,9 @@
 package com.babynames.profile.presentation.fragments
 
 
+import android.app.Activity
 import android.content.ActivityNotFoundException
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.babynames.core.domain.entities.UserProfile
 import com.babynames.gender.presentation.GenderActivity
+import com.babynames.login.domain.entities.responseObjects.UserProfileResponse
 import com.babynames.login.presentation.WelcomeActivity
 import com.babynames.profile.R
 import com.babynames.profile.presentation.activities.AboutActivity
@@ -25,6 +28,11 @@ import org.jetbrains.anko.*
 import org.jetbrains.anko.support.v4.alert
 
 class ProfileFragment : Fragment(), View.OnClickListener {
+
+    private lateinit var userId: String
+    private lateinit var setPartnerDialog: DialogInterface
+
+    private val SCAN_QR_REQUEST = 3000
 
     companion object {
         fun newInstance(userProfile: UserProfile?): ProfileFragment {
@@ -50,9 +58,13 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         if (arguments != null) {
             userProfile = arguments?.getParcelable("user")!!
 
+            userId = userProfile.id
+
             this.text_profile_name.text = userProfile.name
             Picasso.get().load(userProfile.profileImage).transform(CircleTransformation()).into(this.image_user_picture)
 
+        } else {
+            userId = ""
         }
 
 
@@ -79,6 +91,17 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
             R.id.partner_layout_section -> setPartner()
 
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SCAN_QR_REQUEST) {
+            if (resultCode == Activity.RESULT_OK) {
+                this.text_add_partner.visibility = View.GONE
+                this.couple_profile_layout_section.visibility = View.VISIBLE
+                this.text_couple_name.text = data?.getParcelableExtra<UserProfileResponse>("couple")?.name
+            }
         }
     }
 
@@ -119,7 +142,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setPartner() {
-        alert {
+        setPartnerDialog = alert {
             customView {
                 verticalLayout {
                     textView(getString(R.string.profile_dialog_title)) {
@@ -133,14 +156,24 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                         textSize = 16f
                         setPadding(36, 36, 16, 8)
                     }
-                            .setOnClickListener { startActivity(Intent(context, ScanQRActivity::class.java)) }
+                            .setOnClickListener {
+                                val intent = Intent(context, ScanQRActivity::class.java)
+                                intent.putExtra("userId", userId)
+                                startActivityForResult(intent, SCAN_QR_REQUEST)
+                                setPartnerDialog.dismiss()
+                            }
 
                     textView(getString(R.string.profile_dialog_second_option)) {
                         textColor = resources.getColor(R.color.colorBlack)
                         textSize = 16f
                         setPadding(36, 36, 16, 8)
                     }.lparams { bottomMargin = dip(20) }
-                            .setOnClickListener { startActivity(Intent(context, MyCodeActivity::class.java)) }
+                            .setOnClickListener {
+                                val intent = Intent(context, MyCodeActivity::class.java)
+                                intent.putExtra("userId", userId)
+                                startActivity(intent)
+                                setPartnerDialog.dismiss()
+                            }
                 }
             }
         }.show()
