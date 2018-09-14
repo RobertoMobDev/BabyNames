@@ -100,18 +100,8 @@ class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener 
     }
 
     override fun onGetNamesSuccess(namesList: List<Name>) {
-        val names = mutableListOf<Name>()
 
-        if (sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, "") == "unisex") {
-            swipeAdapter.updateNamesList(namesList)
-        } else {
-            for (name in namesList) {
-                if (name.gender == "unisex" || name.gender == sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, ""))
-                    names.add(name)
-            }
-
-            swipeAdapter.updateNamesList(names)
-        }
+        swipeAdapter.updateNamesList(namesList)
 
         this.swipe_names_list.resetStack()
     }
