@@ -3,6 +3,7 @@ package com.babynames.profile.presentation.components
 import com.babynames.core.presentation.components.ApplicationComponent
 import com.babynames.core.presentation.scopes.ActivityScope
 import com.babynames.profile.presentation.activities.ScanQRActivity
+import com.babynames.profile.presentation.fragments.ProfileFragment
 import com.babynames.profile.presentation.modules.CoupleModule
 import dagger.Component
 
@@ -11,5 +12,6 @@ import dagger.Component
 interface CoupleComponent {
 
     fun inject(scanQRActivity: ScanQRActivity)
+    fun inject(profileFragment: ProfileFragment)
 
 }

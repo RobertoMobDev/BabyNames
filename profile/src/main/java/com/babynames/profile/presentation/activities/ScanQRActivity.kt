@@ -27,6 +27,7 @@ import kotlinx.android.synthetic.main.activity_scan_qr.*
 import org.jetbrains.anko.*
 import javax.inject.Inject
 
+@Suppress("DEPRECATION")
 class ScanQRActivity : AppCompatActivity(), PermissionCallback, ScanCodeViewModel {
 
     @Inject
@@ -58,8 +59,6 @@ class ScanQRActivity : AppCompatActivity(), PermissionCallback, ScanCodeViewMode
 
         this.coupleComponent.inject(this)
 
-        this.couplePresenter.bind(this)
-
         userId = if (intent.getStringExtra("userId") != null) {
             intent.getStringExtra("userId")
         } else {
@@ -82,9 +81,19 @@ class ScanQRActivity : AppCompatActivity(), PermissionCallback, ScanCodeViewMode
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        this.couplePresenter.bind(this)
+    }
+
     override fun onPause() {
         codeScanner.releaseResources()
         super.onPause()
+    }
+
+    override fun finish() {
+        super.finish()
+        this.couplePresenter.onDestroy()
     }
 
     override fun onPermissionDenied(permission: String) {
@@ -119,6 +128,11 @@ class ScanQRActivity : AppCompatActivity(), PermissionCallback, ScanCodeViewMode
     }
 
     override fun onGetPartnerSuccess(getCoupleResponseObject: GetCoupleResponseObject) {
+        val resultIntent = Intent()
+
+        sharedPreferencesManager.setSharedPreference("coupleName", getCoupleResponseObject.data[0].name)
+        sharedPreferencesManager.setSharedPreference("couplePicture", getCoupleResponseObject.data[0].profileImage)
+
         alert {
             customView {
                 verticalLayout {
@@ -137,12 +151,13 @@ class ScanQRActivity : AppCompatActivity(), PermissionCallback, ScanCodeViewMode
             }
 
             okButton {
-                this@ScanQRActivity.onBackPressed()
+                resultIntent.putExtra("couple", getCoupleResponseObject.data[0])
+                setResult(Activity.RESULT_OK, intent)
+                finish()
             }
 
             onCancelled {
-                val intent = Intent()
-                intent.putExtra("couple", getCoupleResponseObject.data[0])
+                resultIntent.putExtra("couple", getCoupleResponseObject.data[0])
                 setResult(Activity.RESULT_OK, intent)
                 finish()
             }

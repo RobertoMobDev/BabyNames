@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.babynames.core.domain.entities.UserProfile
+import com.babynames.core.presentation.getApplicationComponent
 import com.babynames.gender.presentation.GenderActivity
 import com.babynames.login.domain.entities.responseObjects.UserProfileResponse
 import com.babynames.login.presentation.WelcomeActivity
@@ -20,19 +21,35 @@ import com.babynames.profile.R
 import com.babynames.profile.presentation.activities.AboutActivity
 import com.babynames.profile.presentation.activities.MyCodeActivity
 import com.babynames.profile.presentation.activities.ScanQRActivity
+import com.babynames.profile.presentation.components.CoupleComponent
+import com.babynames.profile.presentation.components.DaggerCoupleComponent
+import com.babynames.profile.presentation.modules.CoupleModule
 import com.babynames.profile.presentation.views.CircleTransformation
 import com.facebook.login.LoginManager
+import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_profile.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.support.v4.alert
+import javax.inject.Inject
 
+@Suppress("DEPRECATION")
 class ProfileFragment : Fragment(), View.OnClickListener {
+
+    @Inject
+    lateinit var sharedPreferencesManager: SharedPreferencesManager
 
     private lateinit var userId: String
     private lateinit var setPartnerDialog: DialogInterface
 
     private val SCAN_QR_REQUEST = 3000
+
+    private val coupleComponent: CoupleComponent by lazy {
+        DaggerCoupleComponent.builder()
+                .applicationComponent(activity?.getApplicationComponent())
+                .coupleModule(CoupleModule())
+                .build()
+    }
 
     companion object {
         fun newInstance(userProfile: UserProfile?): ProfileFragment {
@@ -53,6 +70,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        this.coupleComponent.inject(this)
+
         val userProfile: UserProfile
 
         if (arguments != null) {
@@ -67,6 +86,15 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             userId = ""
         }
 
+        if (!sharedPreferencesManager.getSharedPreference("coupleName", "").isBlank() &&
+                !sharedPreferencesManager.getSharedPreference("couplePicture", "").isBlank()) {
+
+            this.text_add_partner.visibility = View.GONE
+            this.couple_profile_layout_section.visibility = View.VISIBLE
+            this.text_couple_name.text = sharedPreferencesManager.getSharedPreference("coupleName", "")
+            Picasso.get().load(sharedPreferencesManager.getSharedPreference("couplePicture", "")).into(this.image_couple_picture)
+        }
+
 
 
         this.profile_layout_section.setOnClickListener(this)
@@ -79,6 +107,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         when (view?.id) {
+
             R.id.profile_layout_section -> logOut()
 
             R.id.share_layout_section -> shareApp()
@@ -101,6 +130,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 this.text_add_partner.visibility = View.GONE
                 this.couple_profile_layout_section.visibility = View.VISIBLE
                 this.text_couple_name.text = data?.getParcelableExtra<UserProfileResponse>("couple")?.name
+                Picasso.get().load(data?.getParcelableExtra<UserProfileResponse>("couple")?.profileImage).transform(CircleTransformation()).into(this.image_couple_picture)
             }
         }
     }
@@ -181,8 +211,22 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
     private fun logOut() {
         alert {
-            title = getString(R.string.profile_logout_dialog_title)
-            message = getString(R.string.profile_logout_dialog_message)
+            customView {
+                verticalLayout {
+                    textView(getString(R.string.profile_logout_dialog_title)) {
+                        textColor = resources.getColor(R.color.colorPrimaryDark)
+                        textSize = 18f
+                        setPadding(36, 36, 16, 8)
+                    }
+
+                    textView(getString(R.string.profile_logout_dialog_message)) {
+                        textColor = resources.getColor(R.color.colorBlack)
+                        textSize = 16f
+                        setPadding(36, 36, 16, 8)
+                    }
+                }
+            }
+
             cancelButton { }
             okButton {
                 LoginManager.getInstance().logOut()
