@@ -5,6 +5,7 @@ import com.babynames.core.domain.executors.PostExecutionThread
 import com.babynames.core.domain.executors.ThreadExecutor
 import com.babynames.core.presentation.modules.ApplicationModule
 import com.babynames.core.presentation.modules.NetModule
+import com.babynames.database.data.NamesDatabase
 import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
 import dagger.Component
 import retrofit2.Retrofit
@@ -20,7 +21,7 @@ interface ApplicationComponent {
 
     fun postExecutionThread(): PostExecutionThread
 
-    //TODO: add DataBase
+    fun namesDatabase(): NamesDatabase
 
     fun retrofit(): Retrofit
 

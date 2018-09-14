@@ -3,10 +3,11 @@ package com.babynames.names.presentation.observers
 import android.view.View
 import com.babynames.core.presentation.observers.DefaultObserver
 import com.babynames.names.R
+import com.babynames.names.domain.entities.Name
 import com.babynames.names.domain.entities.responseObjects.NameResponseObject
 import com.babynames.names.presentation.viewModels.NamesViewModel
 
-class GetNamesObserver(view: NamesViewModel?) : DefaultObserver<ArrayList<NameResponseObject>, NamesViewModel>(view) {
+class GetNamesObserver(view: NamesViewModel?) : DefaultObserver<List<Name>, NamesViewModel>(view) {
 
     override fun onComplete() {
 
@@ -17,7 +18,7 @@ class GetNamesObserver(view: NamesViewModel?) : DefaultObserver<ArrayList<NameRe
         this.view?.setProgressVisibility(View.VISIBLE)
     }
 
-    override fun onNext(t: ArrayList<NameResponseObject>) {
+    override fun onNext(t: List<Name>) {
         this.view?.setProgressVisibility(View.INVISIBLE)
         this.view?.onGetNamesSuccess(t)
     }

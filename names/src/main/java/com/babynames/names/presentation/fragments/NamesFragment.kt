@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.*
 import com.babynames.core.presentation.getApplicationComponent
 import com.babynames.names.R
-import com.babynames.names.domain.entities.responseObjects.NameResponseObject
+import com.babynames.names.domain.entities.Name
 import com.babynames.names.presentation.adapters.SwipeNamesAdapter
 import com.babynames.names.presentation.components.DaggerNamesComponent
 import com.babynames.names.presentation.components.NamesComponent
@@ -37,7 +37,7 @@ class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener 
     }
 
     private val swipeAdapter: SwipeNamesAdapter by lazy {
-        SwipeNamesAdapter(arrayListOf())
+        SwipeNamesAdapter()
     }
 
     private val GENDER_SELECTED = "gender"
@@ -99,8 +99,8 @@ class NamesFragment : Fragment(), NamesViewModel, SwipeStack.SwipeStackListener 
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onGetNamesSuccess(namesList: ArrayList<NameResponseObject>) {
-        val names = ArrayList<NameResponseObject>()
+    override fun onGetNamesSuccess(namesList: List<Name>) {
+        val names = mutableListOf<Name>()
 
         if (sharedPreferencesManager.getSharedPreference(GENDER_SELECTED, "") == "unisex") {
             swipeAdapter.updateNamesList(namesList)

@@ -1,11 +1,13 @@
 package com.babynames.core.presentation.modules
 
 import android.app.Application
+import android.arch.persistence.room.Room
 import android.content.Context
 import com.babynames.core.domain.executors.JobExecutor
 import com.babynames.core.domain.executors.PostExecutionThread
 import com.babynames.core.domain.executors.ThreadExecutor
 import com.babynames.core.domain.executors.UIThread
+import com.babynames.database.data.NamesDatabase
 import com.ia.mchaveza.kotlin_library.SharedPreferencesManager
 import dagger.Module
 import dagger.Provides
@@ -34,5 +36,8 @@ class ApplicationModule(private val application: Application) {
     @Singleton
     fun providesSharedPreferences(context: Context): SharedPreferencesManager = SharedPreferencesManager(context)
 
-    //TODO: provideDatabase
+    @Provides
+    @Singleton
+    fun providesNamesDatabase(): NamesDatabase =
+            Room.databaseBuilder(this.application, NamesDatabase::class.java, "names").build()
 }

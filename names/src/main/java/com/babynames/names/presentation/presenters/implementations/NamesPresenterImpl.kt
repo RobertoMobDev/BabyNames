@@ -1,6 +1,7 @@
 package com.babynames.names.presentation.presenters.implementations
 
 import com.babynames.core.presentation.presenters.AbsPresenter
+import com.babynames.database.FavoritesEntity
 import com.babynames.names.domain.useCases.GetNamesUseCase
 import com.babynames.names.presentation.observers.GetNamesObserver
 import com.babynames.names.presentation.presenters.abstractions.NamesPresenter
@@ -20,5 +21,9 @@ class NamesPresenterImpl @Inject constructor(private val getNamesUseCase: GetNam
 
     override fun getNamesList(type: String) {
         this.getNamesUseCase.execute(GetNamesObserver(this.view), type)
+    }
+
+    override fun saveNameIntoFavorites(nameToFavorite: FavoritesEntity) {
+
     }
 }

@@ -8,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.babynames.names.R
-import com.babynames.names.domain.entities.responseObjects.NameResponseObject
+import com.babynames.names.domain.entities.Name
 import kotlinx.android.synthetic.main.name_view.view.*
 import org.jetbrains.anko.backgroundColor
 
-class SwipeNamesAdapter(private var namesList: ArrayList<NameResponseObject>) : BaseAdapter() {
+class SwipeNamesAdapter : BaseAdapter() {
+
+    private val namesList: MutableList<Name> = mutableListOf()
 
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ViewHolder")
@@ -56,7 +58,7 @@ class SwipeNamesAdapter(private var namesList: ArrayList<NameResponseObject>) : 
 
     override fun getCount(): Int = this.namesList.size
 
-    fun updateNamesList(list: ArrayList<NameResponseObject>) {
+    fun updateNamesList(list: List<Name>) {
         this.namesList.clear()
         this.namesList.addAll(list)
         notifyDataSetChanged()

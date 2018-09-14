@@ -16,6 +16,12 @@ class CouplePresenterImpl @Inject constructor(private val setCoupleUseCase: SetC
 
     override fun onBind(view: ScanCodeViewModel) {}
 
+    override fun onDestroy() {
+        super.onDestroy()
+        this.setCoupleUseCase.dispose()
+        this.getCoupleUseCase.dispose()
+    }
+
     override fun setCouple(setCoupleRequestObject: SetCoupleRequestObject) {
         this.setCoupleUseCase.execute(SetCoupleObserver(this.view), setCoupleRequestObject)
     }
