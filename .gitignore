@@ -8,3 +8,7 @@
 /build
 /captures
 .externalNativeBuild
+Sera borrado assets/
+Sera borrado debug/
+Sera borrado release/
+Sera borrado src/main/java/com/babynames/babynames/presentation/modules/
