@@ -92,6 +92,9 @@ dependencies {
     //QR Scanner
     api 'com.budiyev.android:code-scanner:1.9.4'
 
+    //Firebase
+    api 'com.google.firebase:firebase-core:16.0.3'
+
     //Room
     kapt 'android.arch.persistence.room:compiler:1.1.1'
 

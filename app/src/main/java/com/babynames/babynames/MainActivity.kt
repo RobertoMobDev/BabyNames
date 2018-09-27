@@ -19,7 +19,7 @@ class MainActivity : BaseAuthenticationActivity() {
     }
 
     private val firebaseAnalytics: FirebaseAnalytics by lazy {
-        FirebaseAnalytics.getInstance(this);
+        FirebaseAnalytics.getInstance(this)
     }
 
 
